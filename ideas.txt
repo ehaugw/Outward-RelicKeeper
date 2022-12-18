@@ -1,0 +1,77 @@
+Names
+- Porcelain Figurine
+- Basic Relic
+- Hammer of the Storm King
+- Elatt's Lost Relic
+- Obsidian Orb
+- Tuanosaur Trinket
+- Gold Lich Talisman
+- Bracelet of the Mad
+- Lantern of Souls
+- Runic Relic
+- Lexicon Page - [Rune Name]
+- Gep's Friendship Bracelet
+- Woodoo Bone Doll
+- Wendigo Skull
+- Calixa's Relic
+- Leyline Crystal
+- Philosopher’s Stone
+
+Uses
++ apply a random elemental hex in melee range
++ heal yourself
+- gain a burst of divinity
+- gain runic sword
+- poisoning blast
+- gain a one-hit infusion
+- shoot a magic projectile
+- spawn a non-intractable light source
+- cure a status effect
+- deal elemental damage
+- gain movement speed at the cost of stamina burn
+- gain a short term stealth buff
+
+Passives
++ cure wounds restores 1 burnt hp
++ spark applies and spreads Impending Doom
++ wrathful smite resets cooldown when used on a prone target
++ enables casting Torment with the weapon drawn
+- gain doomed immunity
+- increase rate of mad whisperer cooldown stack generation
+- reveal souls passively
+- work as a lexicon
+- satisfy [a specific rune] requirement condition
+- gain fervor, a temporary leyline sacrifice with less mana yield
+- gain mana shield, causes damage taken to be dealt to mana
+- increased starvation rate, but lower stamina cost
+- passive corruption buildup
+
+Channels
+- continuously build up impending doom on nearby enemies
+- summon lightning bolts
+- continuously heal AoE
+- continuously build up mad whisperer cooldown stack
+- cause nearby souls to move toward enemies and explode upon contact
+- channel depending on active rune
+- AoE cure corruption at the cost of health
+- heal at the cost of rapidly increasing hunger
+
+Unleashes
+- heal a nearby ally, or yourself if none are eligible, for a lot of health and can revive
+- cause all nearby impending doom to tick at once
+- gain "intervention", which causes you to gain mana bubble upon taking a lethal hit
+- spawn a soul in front of you
+- give amplified runic protection
+- gain a “thorns” buff
+- reduce movement speed and damage taken, while increasing health burn
+- tame an animal
+- knock down nearby enemies
+- gain a status effect that continuously applies a health buffer
+- make daytime
+- make nighttime
+- assign enemies to random factions
+
+Others:
+- eligible for flamethrower 
+- lantern of souls could reveal souls while active
+
