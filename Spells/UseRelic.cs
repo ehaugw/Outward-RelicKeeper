@@ -53,6 +53,9 @@ namespace RelicKeeper
             }.ApplyToTransform(TinyGameObjectManager.GetOrMake(skill.transform, "ActivationEffects", true, true));
 
             EffectSourceConditionChecker.AddToSkill(skill);
+            EquipSkillDurabilityCondition.AddToSkill(skill, EquipmentSlot.EquipmentSlotIDs.LeftHand);
+
+            //skill.gameObject.AddComponent<EquipDurabilityCondition>();
 
             MeleeJinx.Apply(skill, IDs.woodooCharmID);
             BasicHeal.Apply(skill, IDs.goldLichTalismanID);
