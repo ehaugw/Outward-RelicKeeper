@@ -28,6 +28,10 @@ namespace RelicKeeper
             dynamicSkillStat.Cooldown = cooldown;
             dynamicSkillStat.DurabilityCost= durabilityCost;
 
+            var reducer = effectsContainer.gameObject.AddComponent<ReduceDurability>();
+            reducer.EquipmentSlot = EquipmentSlot.EquipmentSlotIDs.LeftHand;
+            reducer.Durability = durabilityCost;
+
             return effectsContainer;
         }
     }
