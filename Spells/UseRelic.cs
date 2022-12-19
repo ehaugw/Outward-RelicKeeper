@@ -52,6 +52,8 @@ namespace RelicKeeper
                 Sounds = new List<GlobalAudioManager.Sounds>() { GlobalAudioManager.Sounds.SFX_SKILL_Spark }
             }.ApplyToTransform(TinyGameObjectManager.GetOrMake(skill.transform, "ActivationEffects", true, true));
 
+            EffectSourceConditionChecker.AddToSkill(skill);
+
             MeleeJinx.Apply(skill, IDs.woodooCharmID);
             BasicHeal.Apply(skill, IDs.goldLichTalismanID);
             return skill;
