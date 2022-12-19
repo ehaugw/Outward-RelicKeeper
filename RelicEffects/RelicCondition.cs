@@ -26,6 +26,7 @@ namespace RelicKeeper
             dynamicSkillStat.HealthCost = healthCost;
             dynamicSkillStat.StaminaCost= staminaCost;
             dynamicSkillStat.Cooldown = cooldown;
+            dynamicSkillStat.DurabilityCost= durabilityCost;
 
             return effectsContainer;
         }
