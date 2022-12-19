@@ -1,4 +1,4 @@
-﻿using EffectSourceConditions;
+using EffectSourceConditions;
 using InstanceIDs;
 using SideLoader;
 using System;
@@ -13,8 +13,8 @@ namespace RelicKeeper
 {
     public static class BasicHeal
     {
-        static float HEAL_RATIO = 1.0f;
-        static float HEAL_AMOUNT = 20f;
+        const float HEAL_RATIO = 1.0f;
+        const float HEAL_AMOUNT = 20f;
         public static void Apply(Skill skill, int requiredItem)
         {
             var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: HEAL_AMOUNT/HEAL_RATIO, durabilityCost: 3);
