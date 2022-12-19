@@ -1,0 +1,48 @@
+Relics:
+	Equipment that goes into all kinds of equipment slots, most often main hand, off hand and quiver slots.
+	They provide some passive stats and also alter the effects of holy spells.
+
+Radiating (Duration: 15 seconds, ticks once every 1 second)
+	A status effect that deals a total of 10 lighting damage over the duration to the affected creature and nearby creatures.
+	Multiple Radiating effects stack up to deal more increased damage over a slightly longer period of time.
+
+Burst of Divinity (Duration: 30 seconds)
+	This effect can be stacked indefinitely. Each effect has individual timers.
+	Reduces the mana cost of the next spell cast by 7 per stack (before reductions).
+	One stack of Burst of Divinity﻿ will be consumed for every 7 mana that was not spend due to this status effect. This number is always rounded up.
+
+Tier 1: Cure Wounds:
+	Heals you and your surroundings for some health.
+	Better effects can be unlocked.
+
+Tier X:
+	A skill to grant Mana Ward to allies. Ultimate coop life saver	
+
+Breakthrough:
+	Casting Divine spells gives an effect that passively builds up Burst of Divinity. Casting more spells extends the duration of the effect but not the buildup rate. It will give Burst of Divinity equal to the spent mana.
+	Note: if you spend a lot of mana, most of the Bursts of Divinity will be gained out of combat.
+
+Tier 3:
+	A skill that causes a portion of "unused" Mana from Burst of Divinity (either if they provided more Mana than needed or expired) to be regained as mana
+
+Tier 3: Channel Divinity
+	Other Channel Divinity options will be added later. The outcome of the Channel Divinity spell is descided by the relic(s) you have equipped
+	
+	Chaos:
+		Nearby creatures are assigned to random factions, causing all kinds of chaos that may be benefitical to you
+	Destroy Evil:
+		Deals an amount of lightning damage equal to the target's decay resistance. Scourge Creatures are also affected by Doomed, Confusion and/or Radiating
+	
+Tier 3: Holy Shock
+	Spark applies Radiating to creatures hit. If the creature is already affected by Radiating, it is spread to other nearby creatures
+
+Tier X: Purifying Flame
+	Deals less damage but changes damage to lightning when holding a relic (replaces the need for a lantern if using specific relic?)
+	Applies Radiating
+	
+Tier 1: Shield of Faith
+	Similar to Brace﻿; knocks back enemies on a successful block, but doesn't cause impact damage.
+	Applies Mana Ward﻿ to the user on success (not Discipline﻿).
+	
+Tier 3: Relic Lore
+	Unlocks better effects and/or stats from relics.
