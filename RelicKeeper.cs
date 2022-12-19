@@ -1,10 +1,16 @@
 ﻿namespace RelicKeeper
 {
+    using TinyHelper;
+    using EffectSourceConditions;
     using BepInEx;
     using SideLoader;
     using UnityEngine;
 
     [BepInPlugin(GUID, NAME, VERSION)]
+    [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(EffectSourceConditions.GUID, EffectSourceConditions.VERSION)]
+    [BepInDependency(TinyHelper.GUID, TinyHelper.VERSION)]
+    
     public class RelicKeeper : BaseUnityPlugin
     {
         public static RelicKeeper Instance;
