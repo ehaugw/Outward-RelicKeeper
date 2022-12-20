@@ -20,18 +20,18 @@ namespace RelicKeeper
             var damageBlast = new SL_ShootBlast()
             {
                 CastPosition = Shooter.CastPositionType.Local,
-                LocalPositionAdd = new Vector3(0, 1.25f, .5f),
+                LocalPositionAdd = new Vector3(0, 0, 0),
 
-                TargetType = Shooter.TargetTypes.Enemies,
+                TargetType = Shooter.TargetTypes.Any,
 
-                BaseBlast = SL_ShootBlast.BlastPrefabs.DispersionPoison,
+                BaseBlast = SL_ShootBlast.BlastPrefabs.EliteAshGiantAsh,
                 Radius = 7,
-                BlastLifespan = 1,
-                RefreshTime = -1,
+                BlastLifespan = 5,
+                RefreshTime = 0.5f,
                 InstantiatedAmount = 5,
                 Interruptible = false,
                 HitOnShoot = true,
-                IgnoreShooter = true,
+                IgnoreShooter = false,
                 ParentToShootTransform = false,
                 ImpactSoundMaterial = EquipmentSoundMaterials.NONE,
                 DontPlayHitSound = true,
@@ -50,8 +50,9 @@ namespace RelicKeeper
             var damageBlastEffect = damageBlast.BaseBlast.transform.Find("Effects");
             damageBlastEffect.gameObject.SetActive(true);
 
-            var addStatus = damageBlastEffect.gameObject.AddComponent<AddStatusEffect>();
+            var addStatus = damageBlastEffect.gameObject.AddComponent<AddStatusEffectBuildUp>();
             addStatus.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab(IDs.plagueNameID);
+            addStatus.BuildUpValue = 20;
 
         }
     }
