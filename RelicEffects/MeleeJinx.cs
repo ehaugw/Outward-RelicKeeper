@@ -59,10 +59,28 @@ namespace RelicKeeper
             damage.UseOnce = true;
 
             var addRandomEffect = damageBlastEffect.gameObject.AddComponent<AddStatusEffectRandom>();
-            addRandomEffect.Statuses = new String[]
+            
+            addRandomEffect.Statuses = new[] 
             {
-                IDs.doomID, IDs.hauntedID, IDs.curseID, IDs.scorchedID, IDs.chillID
+                IDs.doomNameID, IDs.hauntedNameID, IDs.curseNameID, IDs.scorchedNameID, IDs.chillNameID
             }.Select(s => ResourcesPrefabManager.Instance.GetStatusEffectPrefab(s)).ToArray();
+            addRandomEffect.ForceID = -1;
+
+            var projectile = SL_ShootProjectile.GetProjectilePrefab(SL_ShootProjectile.ProjectilePrefabs.JinxProjectile);
+
+            var vfxSystems = new List<VFXSystem>();
+
+            foreach (var transformNameShort in new String[] {"Doom", "Haunt", "Curse", "Scorch", "Chill"})
+            {
+                var transform = UnityEngine.Object.Instantiate(projectile.transform.Find("VFX" + transformNameShort));
+                transform.parent = damageBlastEffect;
+                transform.gameObject.SetActive(true);
+                TinyGameObjectManager.RecursiveDontDestroyOnLoad(transform);
+                vfxSystems.Add(transform.GetComponent<VFXSystem>());
+            }
+
+            addRandomEffect.VfxSystems = vfxSystems.ToArray();
+
         }
     }
 }
