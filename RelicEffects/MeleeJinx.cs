@@ -54,7 +54,7 @@ namespace RelicKeeper
             GameObject.Destroy(damage);
             damage = damageBlastEffect.gameObject.AddComponent<PunctualDamage>();
             damage.Delay = 0f;
-            damage.Damages = new DamageType[] { new DamageType(DamageType.Types.Physical, 40) };
+            damage.Damages = new DamageType[] { /*new DamageType(DamageType.Types.Physical, 40)*/ };
             damage.Knockback = 40;
             damage.UseOnce = true;
 
