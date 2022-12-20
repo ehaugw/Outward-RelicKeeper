@@ -58,6 +58,7 @@ namespace RelicKeeper
             //skill.gameObject.AddComponent<EquipDurabilityCondition>();
 
             DivineIntervention.Apply(skill, IDs.goldLichTalismanID);
+            PlagueBlast.Apply(skill, IDs.woodooCharmID);
             return skill;
         }
     }
