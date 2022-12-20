@@ -17,7 +17,7 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: 50, durabilityCost: 20, cooldown: 300);
+            var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: 50, durabilityCost: 50, cooldown: 2);
 
             var addStatusEffect = effectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = RelicKeeper.Instance.divineInterventionStatusEffectInstance;
