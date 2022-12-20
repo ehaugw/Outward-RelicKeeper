@@ -5,6 +5,7 @@
     using BepInEx;
     using SideLoader;
     using UnityEngine;
+    using HarmonyLib;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
@@ -20,13 +21,15 @@
         public const string ModFolderName = "RelicKeeper";
 
         public StatusEffect channelRelicStatusEffectInstance;
+        public StatusEffect divineInterventionStatusEffectInstance;
 
         public Skill useRelicInstance;
+        public Skill unleashInstance;
         public Skill channelRelicInstance;
         internal void Awake()
         {
-            //var harmony = new Harmony(GUID);
-            //harmony.PatchAll();
+            var harmony = new Harmony(GUID);
+            harmony.PatchAll();
 
             SL.OnPacksLoaded += OnPacksLoaded;
         }
@@ -39,9 +42,11 @@
             rpcGameObject.AddComponent<RPCManager>();
 
             channelRelicStatusEffectInstance = EffectInitializer.MakeChannelRelicPrefab();
+            divineInterventionStatusEffectInstance = EffectInitializer.MakeDivineInterventionPrefab();
 
             useRelicInstance = UseRelic.Init();
             channelRelicInstance = ChannelRelic.Init();
+            unleashInstance= Unleash.Init();
         }
     }
 }

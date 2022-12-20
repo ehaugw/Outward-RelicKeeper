@@ -38,6 +38,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="RelicEffects\RunicProtection.cs" />
+    <Compile Include="RelicEffects\AmplifiedRunicProtection.cs" />
+    <Compile Include="RelicEffects\DivineIntervention.cs" />
     <Compile Include="RelicEffects\RelicCondition.cs" />
     <Compile Include="RelicEffects\BasicHeal.cs" />
     <Compile Include="RPCManager.cs" />
@@ -46,6 +49,7 @@
     <Compile Include="RelicKeeper.cs" />
     <Compile Include="RelicEffects\MeleeJinx.cs" />
     <Compile Include="Spells\ChannelRelic.cs" />
+    <Compile Include="Spells\Unleash.cs" />
     <Compile Include="Spells\UseRelic.cs" />
   </ItemGroup>
   <ItemGroup>
