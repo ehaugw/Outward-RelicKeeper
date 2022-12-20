@@ -42,7 +42,7 @@ namespace RelicKeeper
                 effectName: "DivineIntervention",
                 familyName: "DivineIntervention",
                 description: "You will be protected when receiving an otherwise lethal hit.",
-                lifespan: 300,
+                lifespan: 1200,
                 refreshRate: -1,
                 stackBehavior: StatusEffectFamily.StackBehaviors.Override,
                 targetStatusName: "Mana Ratio Recovery 3",
