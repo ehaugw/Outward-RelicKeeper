@@ -35,5 +35,29 @@ namespace RelicKeeper
 
             return statusEffect;
         }
+
+        public static StatusEffect MakeDivineInterventionPrefab()
+        {
+            var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
+                effectName: "DivineIntervention",
+                familyName: "DivineIntervention",
+                description: "You will be protected when receiving an otherwise lethal hit.",
+                lifespan: 300,
+                refreshRate: -1,
+                stackBehavior: StatusEffectFamily.StackBehaviors.Override,
+                targetStatusName: "Mana Ratio Recovery 3",
+                isMalusEffect: true,
+                modGUID: RelicKeeper.GUID);
+
+            //var effectSignature = statusEffect.StatusEffectSignature;
+            //var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<ChannelRelicEffect>();
+            //effectComponent.UseOnce = false;
+            //effectSignature.Effects = new List<Effect>() { effectComponent };
+
+            statusEffect.IsHidden = false;
+            statusEffect.DisplayInHud = true;
+
+            return statusEffect;
+        }
     }
 }
