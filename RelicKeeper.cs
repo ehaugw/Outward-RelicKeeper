@@ -6,6 +6,7 @@
     using SideLoader;
     using UnityEngine;
     using HarmonyLib;
+    using System.IO;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
@@ -18,7 +19,7 @@
         public const string GUID = "com.ehaugw.relickeeper";
         public const string VERSION = "1.0.0";
         public const string NAME = "Relic Keeper";
-        public const string ModFolderName = "RelicKeeper";
+        public static string ModFolderName = Directory.GetParent(typeof(RelicKeeper).Assembly.Location).Name.ToString();
 
         public StatusEffect channelRelicStatusEffectInstance;
         public StatusEffect divineInterventionStatusEffectInstance;
@@ -26,6 +27,8 @@
         public Skill useRelicInstance;
         public Skill unleashInstance;
         public Skill channelRelicInstance;
+        public Skill manaFlowInstance;
+
         internal void Awake()
         {
             var harmony = new Harmony(GUID);
@@ -47,6 +50,7 @@
             useRelicInstance = UseRelic.Init();
             channelRelicInstance = ChannelRelic.Init();
             unleashInstance= Unleash.Init();
+            manaFlowInstance= ManaFlow.Init();
         }
     }
 }

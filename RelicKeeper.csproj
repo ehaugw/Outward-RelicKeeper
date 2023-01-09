@@ -38,6 +38,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="RelicEffects\TestEffect.cs" />
     <Compile Include="RelicEffects\PlagueBlast.cs" />
     <Compile Include="RelicEffects\RunicProtection.cs" />
     <Compile Include="RelicEffects\AmplifiedRunicProtection.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="RelicKeeper.cs" />
     <Compile Include="RelicEffects\MeleeJinx.cs" />
     <Compile Include="Spells\ChannelRelic.cs" />
+    <Compile Include="Spells\ManaFlow.cs" />
     <Compile Include="Spells\Unleash.cs" />
     <Compile Include="Spells\UseRelic.cs" />
   </ItemGroup>
