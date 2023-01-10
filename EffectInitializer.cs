@@ -12,18 +12,35 @@ namespace RelicKeeper
 
     class EffectInitializer
     {
+        public static StatusEffect MakeRelicProtectionPrefab()
+        {
+            var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
+                displayName:            "Calixa's Relic",
+                effectName:             "RelicProtection",
+                familyName:             "RelicProtection",
+                description:            "You are protected by Calixa's Relic.",
+                lifespan:               300,
+                refreshRate:            0.25f,
+                stackBehavior:          StatusEffectFamily.StackBehaviors.Override,
+                targetStatusName:       "Runic Protection",
+                isMalusEffect:          false,
+                modGUID:                RelicKeeper.GUID);
+
+            return statusEffect;
+        }
+
         public static StatusEffect MakeChannelRelicPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
-                effectName:             "ChannelingRelic",
-                familyName:             "ChannelingRelic",
-                description:            "You are channeling a relic's powers",
-                lifespan:               -1,
-                refreshRate:            0.25f,
-                stackBehavior:          StatusEffectFamily.StackBehaviors.Override,
-                targetStatusName:       "Mana Ratio Recovery 3",
-                isMalusEffect:          true,
-                modGUID:                RelicKeeper.GUID);
+                effectName: "ChannelingRelic",
+                familyName: "ChannelingRelic",
+                description: "You are channeling a relic's powers",
+                lifespan: -1,
+                refreshRate: 0.25f,
+                stackBehavior: StatusEffectFamily.StackBehaviors.Override,
+                targetStatusName: "Mana Ratio Recovery 3",
+                isMalusEffect: false,
+                modGUID: RelicKeeper.GUID);
 
             var effectSignature = statusEffect.StatusEffectSignature;
             var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<ChannelRelicEffect>();
@@ -39,6 +56,7 @@ namespace RelicKeeper
         public static StatusEffect MakeDivineInterventionPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
+                displayName: "Divine Intervention",
                 effectName: "DivineIntervention",
                 familyName: "DivineIntervention",
                 description: "You will be protected when receiving an otherwise lethal hit.",
@@ -46,7 +64,7 @@ namespace RelicKeeper
                 refreshRate: -1,
                 stackBehavior: StatusEffectFamily.StackBehaviors.Override,
                 targetStatusName: "Mana Ratio Recovery 3",
-                isMalusEffect: true,
+                isMalusEffect: false,
                 modGUID: RelicKeeper.GUID);
 
             //var effectSignature = statusEffect.StatusEffectSignature;
