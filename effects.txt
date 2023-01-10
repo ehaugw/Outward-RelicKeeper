@@ -1,0 +1,13 @@
+ChimesHealBlast             green expanding sphere explosion
+DispersionLight             rocks and light on the ground 
+ForceRaiseLightning         Thunderbolt
+GongStrikeLight             2m radius white sparks that drifts
+KrypteiaMageDispertion      rocks and blue smoke on the ground, like DispersionLight
+KrypteiaThunder             green sigil with delayed thunderbolt
+LichGoldLightBlast          ball of lightning
+DrumHealBlast               blue expanding sphere explosion
+HornetHeal                  tiny green rising light particle cloud
+ChrimsonLaser               red whirling beam that looks amazing
+CrimsonEliteLaser           blue whirling beam that looks amazing
+EliteImmaculateLaser        purple whirling beam that looks amazing
+EliteSupremeShellSpecialLaser yellow whirling beam that looks amazing

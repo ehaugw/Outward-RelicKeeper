@@ -2,6 +2,7 @@
 using InstanceIDs;
 using SideLoader;
 using System.Collections.Generic;
+using System.Linq;
 using TinyHelper;
 using UnityEngine;
 
@@ -42,40 +43,12 @@ namespace RelicKeeper
     public class CharacterEquipment_GetTotalManaUseModifier
     {
         [HarmonyPostfix]
-        public static void Postfix(CharacterEquipment __instance, ref float __result)
+        public static void Postfix(ref float __result, Character ___m_character)
         {
-            if (SideLoader.At.GetField<CharacterEquipment>(__instance, "m_character") is Character character && SkillRequirements.SafeHasSkillKnowledge(character, IDs.manaFlowID))
+            if (___m_character is Character character && SkillRequirements.SafeHasSkillKnowledge(character, IDs.manaFlowID))
             {
-                if (character.LeftHandEquipment?.HasTag(TinyTagManager.GetOrMakeTag(IDs.RelicTag)) ?? false)
-                {
-                    if (__result > 1.10f)
-                    {
-                        __result -= 0.10f;
-                    }
-                    else if (__result < 1.05f)
-                    {
-                        __result -= 0.05f;
-                    }
-                    else
-                    {
-                        __result = 1;
-                    }
-                }
+                __result -= 0.05f * RelicBehavior.GetEquippedRelics(character).Count;
             }
         }
     }
-
-    //[HarmonyPatch(typeof(Weapon), "AddImbueEffect")]
-    //public class Weapon_AddImbueEffect
-    //{
-    //    [HarmonyPrefix]
-    //    public static void Prefix(Weapon __instance, ref ImbueEffectPreset _effect)
-    //    {
-    //        var skillKnowledge = __instance?.OwnerCharacter?.Inventory?.SkillKnowledge;
-    //        if (_effect.PresetID == IDs.divineLightImbueID && skillKnowledge != null && skillKnowledge.IsItemLearned(IDs.divineFavourID))
-    //        {
-    //            _effect = (ImbueEffectPreset)ResourcesPrefabManager.Instance.GetEffectPreset(IDs.radiantLightImbueID);
-    //        }
-    //    }
-    //}
 }

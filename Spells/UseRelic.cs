@@ -59,7 +59,8 @@ namespace RelicKeeper
 
             MeleeJinx.Apply(skill, IDs.woodooCharmID);
             BasicHeal.Apply(skill, IDs.goldLichTalismanID);
-            AmplifiedRunicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
+            RunicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
+            TameBeast.Apply(skill, IDs.obsidianAmuletID);
             return skill;
         }
     }

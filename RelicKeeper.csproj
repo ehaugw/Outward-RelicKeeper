@@ -38,6 +38,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Effects\TameBeastEffect.cs" />
+    <Compile Include="Items\AlphaTuanosaurTrinket.cs" />
+    <Compile Include="Items\BasicRelic.cs" />
+    <Compile Include="Items\GoldLichTalisman.cs" />
+    <Compile Include="Items\ObsidianAmulet.cs" />
+    <Compile Include="Items\WoodooCharm.cs" />
+    <Compile Include="RelicBehavior.cs" />
+    <Compile Include="RelicEffects\TameBeast.cs" />
+    <Compile Include="RelicEffects\RelicProtection.cs" />
     <Compile Include="RelicEffects\TestEffect.cs" />
     <Compile Include="RelicEffects\PlagueBlast.cs" />
     <Compile Include="RelicEffects\RunicProtection.cs" />

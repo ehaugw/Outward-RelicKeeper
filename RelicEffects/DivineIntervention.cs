@@ -30,7 +30,7 @@ namespace RelicKeeper
         [HarmonyPrefix]
         public static void Prefix(Character __instance, ref DamageList __result, UnityEngine.Object _damageSource, ref DamageList _damage, Vector3 _hitDir, Vector3 _hitPoint, float _angle, float _angleDir, Character _dealerChar, float _knockBack, bool _hitInventory)
         {
-            if (__instance.StatusEffectMngr.HasStatusEffect(RelicKeeper.Instance.divineInterventionStatusEffectInstance.IdentifierName))
+            if (__instance.StatusEffectMngr?.HasStatusEffect(RelicKeeper.Instance.divineInterventionStatusEffectInstance.IdentifierName) ?? false)
             {
                 DamageList damageList = _damage.Clone();
                 StatusEffect statusEffect = _damageSource as StatusEffect;

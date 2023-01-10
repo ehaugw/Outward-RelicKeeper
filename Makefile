@@ -2,7 +2,9 @@ modname = RelicKeeper
 gamepath = /mnt/c/Program\ Files\ \(x86\)/Steam/steamapps/common/Outward/Outward_Defed
 pluginpath = BepInEx/plugins
 sideloaderpath = $(pluginpath)/$(modname)/SideLoader
-unityassets = resources/unity/Particles/Assets/AssetBundles
+exports = resources/artsource/exports
+unityassets = resources/unity/RelicKeeper/Assets
+unityassetbundles = resources/unity/RelicKeeper/Assets/AssetBundles
 
 dependencies = CustomWeaponBehaviour EffectSourceConditions HolyDamageManager SynchronizedWorldObjects TinyHelper
 
@@ -14,6 +16,22 @@ assemble:
 		cp -u ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
 	done
 	
+	mkdir -p public/$(sideloaderpath)/Items
+	mkdir -p public/$(sideloaderpath)/Texture2D
+	mkdir -p public/$(sideloaderpath)/AssetBundles
+	
+	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/ #basic_relic_Material
+	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
+	mkdir -p public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/ #basic_relic_Material
+	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/icon.png
+
+	cp -u $(unityassetbundles)/basic_relic                                             public/$(sideloaderpath)/AssetBundles/basic_relic
+
+unity:
+	cp resources/artsource/basic_relic.fbx                                          $(unityassets)/basic_relic.fbx
+	cp $(exports)/basic_relic/basic_relic_AlbedoTransparency.png    				$(unityassets)/basic_relic_AlbedoTransparency.png
+	cp $(exports)/basic_relic/basic_relic_MetallicSmoothness.png    				$(unityassets)/basic_relic_MetallicSmoothness.png
+	cp $(exports)/basic_relic/basic_relic_Normal.png                				$(unityassets)/basic_relic_Normal.png
 
 publish:
 	make clean
@@ -40,3 +58,9 @@ info:
 	echo Modname: $(modname)
 play:
 	(make install && cd .. && make play)
+backup:
+	mkdir -p ../../OutwardModdingGraphicsBackup/resources/artsource
+	mkdir -p ../../OutwardModdingGraphicsBackup/resources/icons
+	cp -u resources/artsource/*.blend ../../OutwardModdingGraphicsBackup/resources/artsource
+	cp -u resources/artsource/*.spp ../../OutwardModdingGraphicsBackup/resources/artsource
+	cp -u resources/icons/*.pdn ../../OutwardModdingGraphicsBackup/resources/icons

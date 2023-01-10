@@ -59,6 +59,8 @@ namespace RelicKeeper
 
             DivineIntervention.Apply(skill, IDs.goldLichTalismanID);
             PlagueBlast.Apply(skill, IDs.woodooCharmID);
+            RelicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
+
             return skill;
         }
     }
