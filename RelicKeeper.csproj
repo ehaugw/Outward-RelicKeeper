@@ -45,6 +45,7 @@
     <Compile Include="Items\ObsidianAmulet.cs" />
     <Compile Include="Items\WoodooCharm.cs" />
     <Compile Include="RelicBehavior.cs" />
+    <Compile Include="RelicEffects\RelicPush.cs" />
     <Compile Include="RelicEffects\TameBeast.cs" />
     <Compile Include="RelicEffects\RelicProtection.cs" />
     <Compile Include="RelicEffects\TestEffect.cs" />
@@ -59,6 +60,8 @@
     <Compile Include="Effects\ChannelRelicEffect.cs" />
     <Compile Include="RelicKeeper.cs" />
     <Compile Include="RelicEffects\MeleeJinx.cs" />
+    <Compile Include="SkillTreesAndTrainers\RelicKeeperSkillTree.cs" />
+    <Compile Include="SkillTreesAndTrainers\HarmalanNPC.cs" />
     <Compile Include="Spells\ChannelRelic.cs" />
     <Compile Include="Spells\ManaFlow.cs" />
     <Compile Include="Spells\Unleash.cs" />
@@ -115,6 +118,10 @@
     <ProjectReference Include="..\Outward-SideLoader\src\SideLoader.csproj">
       <Project>{69b2c7b7-d715-4002-b009-f84ada52f8cc}</Project>
       <Name>SideLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SynchronizedWorldObjects\SynchronizedWorldObjects.csproj">
+      <Project>{bada105e-b03e-49e0-a87e-95af55944022}</Project>
+      <Name>SynchronizedWorldObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\TinyHelper\TinyHelper.csproj">
       <Project>{5bff01dc-4eae-4eba-9b1e-fdf0cfe577f2}</Project>

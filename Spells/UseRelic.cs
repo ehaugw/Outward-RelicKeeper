@@ -61,6 +61,7 @@ namespace RelicKeeper
             BasicHeal.Apply(skill, IDs.goldLichTalismanID);
             RunicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
             TameBeast.Apply(skill, IDs.obsidianAmuletID);
+            RelicPush.Apply(skill, IDs.basicRelicID);
             return skill;
         }
     }

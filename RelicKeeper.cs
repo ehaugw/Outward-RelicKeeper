@@ -7,14 +7,15 @@
     using UnityEngine;
     using HarmonyLib;
     using System.IO;
-    using System.Collections.Generic;
-    using System.Linq;
+    using SynchronizedWorldObjects;
+
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(EffectSourceConditions.GUID, EffectSourceConditions.VERSION)]
     [BepInDependency(TinyHelper.GUID, TinyHelper.VERSION)]
-    
+    [BepInDependency(SynchronizedWorldObjects.GUID, SynchronizedWorldObjects.VERSION)]
+
     public class RelicKeeper : BaseUnityPlugin
     {
         public static RelicKeeper Instance;
@@ -42,22 +43,22 @@
         public Skill channelRelicInstance;
         public Skill manaFlowInstance;
 
+        public static SkillSchool RelicKeeperSkillTreeInstance;
+
         internal void Awake()
         {
+            Instance = this;
+
             var harmony = new Harmony(GUID);
             harmony.PatchAll();
+
+            HarmalanNPC.Init();
 
             SL.OnPacksLoaded += OnPacksLoaded;
             //SL.OnSceneLoaded += OnSceneLoadedEquipment;
         }
         private void OnPacksLoaded()
         {
-            Instance = this;
-            
-            var rpcGameObject = new GameObject("RelicKeeperRPC");
-            DontDestroyOnLoad(rpcGameObject);
-            rpcGameObject.AddComponent<RPCManager>();
-
             //RELICS
             basicRelicInstance = BasicRelic.MakeItem();
             obsidianAmuletInstance = ObsidianAmulet.MakeItem();
@@ -80,8 +81,10 @@
             channelRelicInstance = ChannelRelic.Init();
             unleashInstance= Unleash.Init();
             manaFlowInstance= ManaFlow.Init();
+
+            RelicKeeperSkillTree.SetupSkillTree(ref RelicKeeperSkillTreeInstance);
         }
-        
+
         //private void OnSceneLoadedEquipment()
         //{
         //    foreach (GameObject obj in Resources.FindObjectsOfTypeAll<GameObject>().Where(x => x.name == "HumanSNPC_Blacksmith" && (x.GetComponentInChildren<Merchant>()?.ShopName ?? "") == "Vyzyrinthrix the Blacksmith"))
