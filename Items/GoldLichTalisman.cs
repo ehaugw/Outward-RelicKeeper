@@ -18,7 +18,7 @@ namespace RelicKeeper
             var myitem = new SL_Equipment()
             {
                 Name = ItemName,
-                Target_ItemID = IDs.arbitraryTrinketID,
+                Target_ItemID = IDs.basicRelicID,
                 New_ItemID = IDs.goldLichTalismanID,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Description = "Crafted from a mechanism from the Light Mender's minions.",

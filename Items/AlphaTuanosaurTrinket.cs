@@ -18,7 +18,7 @@ namespace RelicKeeper
             var myitem = new SL_Item()
             {
                 Name = ItemName,
-                Target_ItemID = IDs.arbitraryTrinketID,
+                Target_ItemID = IDs.basicRelicID,
                 New_ItemID = IDs.alphaTuanosaurTrinketID,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Description = "A trinket made from a tail bone of an apex predator. Causes the cooldown of Wrathful Smite to reset if used on a prone target.",

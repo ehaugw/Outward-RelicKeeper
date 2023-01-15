@@ -22,7 +22,7 @@ namespace RelicKeeper
             var myitem = new SL_Item()
             {
                 Name = ItemName,
-                Target_ItemID = IDs.arbitraryTrinketID,
+                Target_ItemID = IDs.basicRelicID,
                 New_ItemID = IDs.woodooCharmID,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Description = "Woodoo Charm for Woodooing uncharming creatures.",

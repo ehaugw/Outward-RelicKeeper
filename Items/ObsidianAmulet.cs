@@ -17,7 +17,7 @@ namespace RelicKeeper
             var myitem = new SL_Item()
             {
                 Name = ItemName,
-                Target_ItemID = IDs.arbitraryTrinketID,
+                Target_ItemID = IDs.basicRelicID,
                 New_ItemID = IDs.obsidianAmuletID,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Description = "An ornament crafted from fire-infused glass. Causes spark to apply and spread Impending Doom.",
