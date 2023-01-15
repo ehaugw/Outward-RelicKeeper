@@ -15,7 +15,7 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 25, cooldown: 20);
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 25, cooldown: 20);
 
             var damageBlast = new SL_ShootBlast()
             {
@@ -44,7 +44,7 @@ namespace RelicKeeper
                         }
                     }
                 },
-            }.ApplyToTransform(effectsContainer) as ShootBlast;
+            }.ApplyToTransform(relicCondition.EffectsContainer) as ShootBlast;
 
 
             var damageBlastEffect = damageBlast.BaseBlast.transform.Find("Effects");

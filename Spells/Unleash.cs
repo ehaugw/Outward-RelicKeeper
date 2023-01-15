@@ -23,10 +23,10 @@ namespace RelicKeeper
                 SLPackName = RelicKeeper.ModFolderName,
                 SubfolderName = "Unleash",
                 Description = "Unleash unknown powers from within a relic.",
-                CastType = Character.SpellCastType.LanternThrowLeft,
+                CastType = Character.SpellCastType.Fast,
                 CastModifier = Character.SpellCastModifier.Immobilized,
                 CastLocomotionEnabled = false,
-                MobileCastMovementMult = 0f,
+                MobileCastMovementMult = -1f,
                 CastSheatheRequired = 0,
 
                 RequiredWeaponTags = new string[] { IDs.RelicTag },
@@ -55,12 +55,13 @@ namespace RelicKeeper
             EffectSourceConditionChecker.AddToSkill(skill);
             EquipSkillDurabilityCondition.AddToSkillNotBroken(skill, EquipmentSlot.EquipmentSlotIDs.LeftHand);
 
-            //skill.gameObject.AddComponent<EquipDurabilityCondition>();
-
+            //DONE
+            RelicWard.Apply(skill, IDs.basicRelicID);
+            
+            //IN PROGRESS
             DivineIntervention.Apply(skill, IDs.goldLichTalismanID);
             PlagueBlast.Apply(skill, IDs.woodooCharmID);
             RelicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
-            RelicWard.Apply(skill, IDs.basicRelicID);
 
             return skill;
         }

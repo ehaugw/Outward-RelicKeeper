@@ -55,13 +55,14 @@ namespace RelicKeeper
             EffectSourceConditionChecker.AddToSkill(skill);
             EquipSkillDurabilityCondition.AddToSkillNotBroken(skill, EquipmentSlot.EquipmentSlotIDs.LeftHand);
 
-            //skill.gameObject.AddComponent<EquipDurabilityCondition>();
+            // DONE
+            RelicPush.Apply(skill, IDs.basicRelicID);
 
+            //IN PROGRESS
             MeleeJinx.Apply(skill, IDs.woodooCharmID);
             BasicHeal.Apply(skill, IDs.goldLichTalismanID);
             RunicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
             TameBeast.Apply(skill, IDs.obsidianAmuletID);
-            RelicPush.Apply(skill, IDs.basicRelicID);
             return skill;
         }
     }

@@ -17,9 +17,9 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: 16, durabilityCost: 1, cooldown: 2);
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 16, durabilityCost: 1, cooldown: 2);
 
-            var addStatusEffect = effectsContainer.gameObject.AddComponent<AddStatusEffect>();
+            var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab(IDs.runicProtectionID);
         }
     }

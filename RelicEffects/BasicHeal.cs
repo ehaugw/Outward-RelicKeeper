@@ -17,9 +17,9 @@ namespace RelicKeeper
         const float HEAL_AMOUNT = 20f;
         public static void Apply(Skill skill, int requiredItem)
         {
-            var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: HEAL_AMOUNT/HEAL_RATIO, durabilityCost: 2);
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: HEAL_AMOUNT/HEAL_RATIO, durabilityCost: 2);
 
-            var affectHealth = effectsContainer.gameObject.AddComponent<AffectHealth>();
+            var affectHealth = relicCondition.EffectsContainer.gameObject.AddComponent<AffectHealth>();
             affectHealth.AffectQuantity = HEAL_AMOUNT;
         }
     }

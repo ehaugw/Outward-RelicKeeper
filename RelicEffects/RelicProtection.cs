@@ -19,8 +19,8 @@ namespace RelicKeeper
 
         public static void Apply(Skill skill, int requiredItem)
         {
-            var effectsContainer = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 1, cooldown: 2);
-            var addStatusEffect = effectsContainer.gameObject.AddComponent<AddStatusEffect>();
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 1, cooldown: 2);
+            var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = RelicKeeper.Instance.relicProtectionEffectInstance;
             addStatusEffect.BaseChancesToContract = 100;
             RelicProtectionTargetIDs.Add(requiredItem);
