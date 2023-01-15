@@ -25,7 +25,7 @@ namespace RelicKeeper
                 TargetType = Shooter.TargetTypes.Enemies,
 
                 BaseBlast = SL_ShootBlast.BlastPrefabs.ForcePush,
-                Radius = 1f,
+                Radius = 1.2f,
                 BlastLifespan = 1,
                 RefreshTime = -1,
                 InstantiatedAmount = 5,
