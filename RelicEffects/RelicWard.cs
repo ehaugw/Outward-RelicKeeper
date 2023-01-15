@@ -22,22 +22,10 @@ namespace RelicKeeper
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab(IDs.manaWardID);
 
-            new SL_PlaySoundEffect()
-            {
-                Follow = true,
-                OverrideCategory = EffectSynchronizer.EffectCategories.None,
-                Delay = 0.0f,
-                MinPitch = 1,
-                MaxPitch = 1,
-                SyncType = Effect.SyncTypes.OwnerSync,
-                Sounds = new List<GlobalAudioManager.Sounds>() { GlobalAudioManager.Sounds.SFX_SKILL_Spark }
-            }.ApplyToTransform(relicCondition.ActivationEffectsContainer);
-
             new SL_PlayTimedVFX()
             {
                 VFXPrefab = SL_PlayVFX.VFXPrefabs.VFXForceBubble,
             }.ApplyToTransform(relicCondition.ActivationEffectsContainer);
-
         }
     }
 }
