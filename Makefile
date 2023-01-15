@@ -20,9 +20,11 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
-	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/ #basic_relic_Material
+	mkdir -p public/$(sideloaderpath)/Items/BasicRelic/Textures/
+	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/BasicRelic/Textures/icon.png
+	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/
 	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
-	mkdir -p public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/ #basic_relic_Material
+	mkdir -p public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/
 	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/icon.png
 
 	cp -u $(unityassetbundles)/basic_relic                                             public/$(sideloaderpath)/AssetBundles/basic_relic
