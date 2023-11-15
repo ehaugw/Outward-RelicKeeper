@@ -22,7 +22,7 @@ namespace RelicKeeper
             var myitem = new SL_Item()
             {
                 Name = ItemName,
-                Target_ItemID = IDs.basicRelicID,
+                Target_ItemID = IDs.arbitraryTrinketID,
                 New_ItemID = IDs.woodooCharmID,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Description = "Woodoo Charm for Woodooing uncharming creatures.",
@@ -45,10 +45,10 @@ namespace RelicKeeper
                 SubfolderName = SubfolderName,
                 ItemVisuals = new SL_ItemVisual()
                 {
-                    Prefab_Name = "basic_relic_Prefab",
-                    Prefab_AssetBundle = "basic_relic",
+                    Prefab_Name = "woodoo_charm_Prefab",
+                    Prefab_AssetBundle = "woodoo_charm",
                     Prefab_SLPack = RelicKeeper.ModFolderName,
-                    Rotation = new Vector3(90, 0, 0),
+                    Rotation = new Vector3(-90, 0, 90),
                     Position = new Vector3(0, -0.093f, 0),
 
                     

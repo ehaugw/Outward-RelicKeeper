@@ -23,13 +23,18 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Items/BasicRelic/Textures/
 	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/BasicRelic/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/
-	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
+	cp -u resources/icons/woodoo_charm.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/
 	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/icon.png
-
+	
 	cp -u $(unityassetbundles)/basic_relic                                             public/$(sideloaderpath)/AssetBundles/basic_relic
+	cp -u $(unityassetbundles)/woodoo_charm                                            public/$(sideloaderpath)/AssetBundles/woodoo_charm
 
 unity:
+	cp resources/artsource/woodoo_charm.fbx                                         $(unityassets)/woodoo_charm.fbx
+	cp $(exports)/woodoo_charm/woodoo_charm_AlbedoTransparency.png    				$(unityassets)/woodoo_charm_AlbedoTransparency.png
+	cp $(exports)/woodoo_charm/woodoo_charm_MetallicSmoothness.png    				$(unityassets)/woodoo_charm_MetallicSmoothness.png
+	cp $(exports)/woodoo_charm/woodoo_charm_Normal.png                				$(unityassets)/woodoo_charm_Normal.png
 	cp resources/artsource/basic_relic.fbx                                          $(unityassets)/basic_relic.fbx
 	cp $(exports)/basic_relic/basic_relic_AlbedoTransparency.png    				$(unityassets)/basic_relic_AlbedoTransparency.png
 	cp $(exports)/basic_relic/basic_relic_MetallicSmoothness.png    				$(unityassets)/basic_relic_MetallicSmoothness.png
