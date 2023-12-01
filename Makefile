@@ -54,6 +54,9 @@ publish:
 	(cd public/BepInEx && zip -r $(modname)_thunderstore.zip * && mv $(modname)_thunderstore.zip ../../)
 
 install:
+	if [ ! -f omit.txt ]; then make forceinstall; fi
+
+forceinstall:
 	make assemble
 	rm -r -f $(gamepath)/$(pluginpath)/$(modname)
 	cp -u -r public/* $(gamepath)
