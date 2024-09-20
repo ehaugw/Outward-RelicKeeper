@@ -8,19 +8,19 @@ using UnityEngine;
 
 namespace RelicKeeper
 {
-    public class ManaFlow
+    public class MythicLore
     {
         public static Skill Init()
         {
             var myitem = new SL_Skill()
             {
-                Name = "Mana Flow",
+                Name = "Mythic Lore",
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
-                New_ItemID = IDs.manaFlowID,
+                New_ItemID = IDs.mythicLoreID,
                 SLPackName = RelicKeeper.ModFolderName,
-                SubfolderName = "ManaFlow",
-                Description = "Use Relic has a lowered durability cost, but also an increased mana cost.",
+                SubfolderName = "MythicLore",
+                Description = "Enables you to Use and Unleash mythic relics",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,

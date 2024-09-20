@@ -12,14 +12,14 @@ namespace RelicKeeper
 {
     public class UseRelic
     {
-        public static Skill Init()
+        public static Skill Init(int id)
         {
             var myitem = new SL_AttackSkill()
             {
                 Name = "Use Relic",
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.sparkID,
-                New_ItemID = IDs.useRelicID,
+                New_ItemID = id,
                 SLPackName = RelicKeeper.ModFolderName,
                 SubfolderName = "UseRelic",
                 Description = "Use unknown powers from within a relic.",

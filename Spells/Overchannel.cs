@@ -8,19 +8,19 @@ using UnityEngine;
 
 namespace RelicKeeper
 {
-    public class ManaFlow
+    public class Overchannel
     {
         public static Skill Init()
         {
             var myitem = new SL_Skill()
             {
-                Name = "Mana Flow",
+                Name = "Overchannel",
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
-                New_ItemID = IDs.manaFlowID,
+                New_ItemID = IDs.overchannelID,
                 SLPackName = RelicKeeper.ModFolderName,
-                SubfolderName = "ManaFlow",
-                Description = "Use Relic has a lowered durability cost, but also an increased mana cost.",
+                SubfolderName = "Overchannel",
+                Description = "Use Relic has a lowered cooldown, but increased durability cost.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,

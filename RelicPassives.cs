@@ -15,7 +15,7 @@ namespace RelicKeeper
     {
         public static bool CanCastTormentWithDrawnWeapon(Character character)
         {
-            return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && SkillRequirements.SafeHasSkillKnowledge(character, IDs.manaFlowID);
+            return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && SkillRequirements.SafeHasSkillKnowledge(character, IDs.arcaneInfluenceID);
         }
     }
 

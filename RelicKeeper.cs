@@ -8,7 +8,7 @@
     using HarmonyLib;
     using System.IO;
     using SynchronizedWorldObjects;
-
+    using InstanceIDs;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
@@ -28,21 +28,6 @@
         public StatusEffect divineInterventionStatusEffectInstance;
         public StatusEffect relicProtectionEffectInstance;
 
-        public Item obsidianAmuletInstance;
-        public Item alphaTuanosaurTrinketInstance;
-        public Item talismanOfRecoveryInstance;
-        public Item woodooCharmInstance;
-        public Item basicRelicInstance;
-        public Item talismanOfRecoveryRecipeInstance;
-        public Item obsidianAmuletRecipeInstance;
-        public Item alphaTuanosaurTrinketRecipeInstance;
-
-
-        public Skill useRelicInstance;
-        public Skill unleashInstance;
-        public Skill channelRelicInstance;
-        public Skill manaFlowInstance;
-
         public static SkillSchool RelicKeeperSkillTreeInstance;
 
         internal void Awake()
@@ -60,16 +45,16 @@
         private void OnPacksLoaded()
         {
             //RELICS
-            basicRelicInstance = BasicRelic.MakeItem();
-            obsidianAmuletInstance = ObsidianAmulet.MakeItem();
-            alphaTuanosaurTrinketInstance = AlphaTuanosaurTrinket.MakeItem();
-            talismanOfRecoveryInstance = GoldLichTalisman.MakeItem();
-            woodooCharmInstance = WoodooCharm.MakeItem();
+            BasicRelic.MakeItem();
+            ObsidianAmulet.MakeItem();
+            AlphaTuanosaurTrinket.MakeItem();
+            GoldLichTalisman.MakeItem();
+            WoodooCharm.MakeItem();
 
             //RELIC RECIPES
-            talismanOfRecoveryRecipeInstance = GoldLichTalisman.MakeRecipe();
-            alphaTuanosaurTrinketRecipeInstance = AlphaTuanosaurTrinket.MakeRecipe();
-            obsidianAmuletRecipeInstance = ObsidianAmulet.MakeRecipe();
+            GoldLichTalisman.MakeRecipe();
+            AlphaTuanosaurTrinket.MakeRecipe();
+            ObsidianAmulet.MakeRecipe();
 
             //EFFECTS
             channelRelicStatusEffectInstance = EffectInitializer.MakeChannelRelicPrefab();
@@ -77,10 +62,14 @@
             relicProtectionEffectInstance = EffectInitializer.MakeRelicProtectionPrefab();
 
             //RELIC SPELLS
-            useRelicInstance = UseRelic.Init();
-            channelRelicInstance = ChannelRelic.Init();
-            unleashInstance= Unleash.Init();
-            manaFlowInstance= ManaFlow.Init();
+            UseRelic.Init(IDs.useRelicID);
+            UseRelic.Init(IDs.useRelic2ID);
+            Unleash.Init();
+            ManaFlow.Init();
+            RelicLore.Init();
+            MythicLore.Init();
+            Overchannel.Init();
+            ArcaneInfluence.Init();
 
             RelicKeeperSkillTree.SetupSkillTree(ref RelicKeeperSkillTreeInstance);
         }
