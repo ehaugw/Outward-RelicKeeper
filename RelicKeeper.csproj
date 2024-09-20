@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Effects\TameBeastEffect.cs" />
+    <Compile Include="RelicPassives.cs" />
     <Compile Include="Items\AlphaTuanosaurTrinket.cs" />
     <Compile Include="Items\BasicRelic.cs" />
     <Compile Include="Items\GoldLichTalisman.cs" />

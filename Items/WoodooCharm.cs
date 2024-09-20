@@ -64,16 +64,3 @@ namespace RelicKeeper
         }
     }
 }
-
-[HarmonyPatch(typeof(Item), "GetCastSheathRequired")]
-public class Item_GetCastSheathRequired
-{
-    [HarmonyPostfix]
-    public static void Postfix(Item __instance, ref int __result)
-    {
-        if ((__instance.ItemID == IDs.tormentID /*|| __instance.ItemID == IDs.ruptureID*/) && (__instance.OwnerCharacter?.Inventory?.Equipment?.ItemEquippedCount(IDs.woodooCharmID) ?? 0) > 0)
-        {
-            __result = 0;
-        }
-    }
-}

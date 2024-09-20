@@ -38,17 +38,4 @@ namespace RelicKeeper
             return skill;
         }
     }
-
-    [HarmonyPatch(typeof(CharacterEquipment), "GetTotalManaUseModifier")]
-    public class CharacterEquipment_GetTotalManaUseModifier
-    {
-        [HarmonyPostfix]
-        public static void Postfix(ref float __result, Character ___m_character)
-        {
-            if (___m_character is Character character && SkillRequirements.SafeHasSkillKnowledge(character, IDs.manaFlowID))
-            {
-                __result -= 0.05f * RelicBehavior.GetEquippedRelics(character).Count;
-            }
-        }
-    }
 }
