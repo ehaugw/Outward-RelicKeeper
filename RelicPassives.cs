@@ -15,7 +15,7 @@ namespace RelicKeeper
     {
         public static bool CanCastTormentWithDrawnWeapon(Character character)
         {
-            return ((character?.Inventory?.Equipment?.ItemEquippedCount(IDs.woodooCharmID) ?? 0) > 0) && TinyHelper.SkillRequirements.SafeHasSkillKnowledge(character, IDs.manaFlowID);
+            return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && SkillRequirements.SafeHasSkillKnowledge(character, IDs.manaFlowID);
         }
     }
 
