@@ -22,7 +22,7 @@ namespace RelicKeeper
                 New_ItemID = IDs.manaFlowID,
                 SLPackName = RelicKeeper.ModFolderName,
                 SubfolderName = "ManaFlow",
-                Description = "Equipped relics grant you mana cost reduction.",
+                Description = "Use Relic has a lowered durability cost and an increased mana cost.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,
