@@ -24,35 +24,39 @@ namespace RelicKeeper
                 
                 SkillRows = new List<SL_SkillRow>() {
                     new SL_SkillRow() { RowIndex = 1, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 50, SkillID = IDs.useRelicID,                    Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
-                            //new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.manaFlowID,                    Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
+                            new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 50, SkillID = IDs.useRelicID,                        Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
+                            new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 50, SkillID = IDs.unleashID,                         Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
+                            new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.manaFlowID,                        Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
                     } },
 
                     new SL_SkillRow() { RowIndex = 2, Slots = new List<SL_BaseSkillSlot>() {
-                            //new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 100, SkillID = IDs.divineFavourID,               Breakthrough = false,   RequiredSkillSlot = new Vector2(1,2) },
                     } },
 
                     new SL_SkillRow() { RowIndex = 3, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 500, SkillID = IDs.manaFlowID,                   Breakthrough = true,  RequiredSkillSlot = Vector2.zero, },
+                            new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 500, SkillID = IDs.relicLoreID,                      Breakthrough = true,  RequiredSkillSlot = Vector2.zero, },
                     } },
 
-                    new SL_SkillRow() { RowIndex = 4, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 600, SkillID = IDs.unleashID,                    Breakthrough = false,   RequiredSkillSlot = new Vector2(3, 2)},
-                            //new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.channelRelicID,               Breakthrough = false,  RequiredSkillSlot = new Vector2(3, 2)},
+                    new SL_SkillRow() {
+                        RowIndex = 4, Slots = new List<SL_BaseSkillSlot>() {
+                            new SL_SkillSlotFork()
+                            {
+                                ColumnIndex = 2,
+                                RequiredSkillSlot = Vector2.zero,
+                                Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.mythicLoreID,       RequiredSkillSlot = new Vector2(3, 2)},
+                                Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.useRelic2ID,        RequiredSkillSlot = new Vector2(3, 2)},
+                            }
                         }
                     },
 
                     new SL_SkillRow() {
                         RowIndex = 5, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.channelRelicID,               Breakthrough = false,  RequiredSkillSlot = new Vector2(3, 2)},
-
-                        //    new SL_SkillSlotFork() 
-                        //    {
-                        //        ColumnIndex = 2,
-                        //        RequiredSkillSlot = Vector2.zero,
-                        //        Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.holyShockSkillID, RequiredSkillSlot = new Vector2(3, 2)},
-                        //        Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.wrathfulSmiteID, RequiredSkillSlot = new Vector2(3, 2)},
-                        //    }
+                            new SL_SkillSlotFork()
+                            {
+                                ColumnIndex = 2,
+                                RequiredSkillSlot = Vector2.zero,
+                                Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.arcaneInfluenceID,  RequiredSkillSlot = new Vector2(3, 2)},
+                                Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.overchannelID,      RequiredSkillSlot = new Vector2(3, 2)},
+                            }
                         }
                     }
                 }
