@@ -64,6 +64,7 @@
     <Compile Include="RelicEffects\MeleeJinx.cs" />
     <Compile Include="SkillTreesAndTrainers\RelicKeeperSkillTree.cs" />
     <Compile Include="SkillTreesAndTrainers\HarmalanNPC.cs" />
+    <Compile Include="Spells\ArcaneInfluence.cs" />
     <Compile Include="Spells\ChannelRelic.cs" />
     <Compile Include="Spells\ManaFlow.cs" />
     <Compile Include="Spells\Unleash.cs" />
