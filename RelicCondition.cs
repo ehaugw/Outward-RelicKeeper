@@ -32,16 +32,21 @@ namespace RelicKeeper
 
 
             var requirementTransform = TinyGameObjectManager.GetOrMake(relicCondition.ActivationEffectsContainer.transform, EffectSourceConditions.EffectSourceConditions.SOURCE_CONDITION_CONTAINER, true, true);
-            var skillReq = requirementTransform.gameObject.AddComponent<SourceConditionRelic>();
+            var skillReq = requirementTransform.gameObject.AddComponent<SourceConditionEquipment>();
             skillReq.RequiredItemID = requiredItem;
             skillReq.RequiredEnchantID = requiredEnchant;
-            skillReq.relicLevel = relicLevel;
+
+            var levelReq = requirementTransform.gameObject.AddComponent<SourceConditionRelicLevel>();
+            levelReq.relicLevel = relicLevel;
 
             requirementTransform = TinyGameObjectManager.GetOrMake(relicCondition.EffectsContainer.transform, EffectSourceConditions.EffectSourceConditions.SOURCE_CONDITION_CONTAINER, true, true);
-            skillReq = requirementTransform.gameObject.AddComponent<SourceConditionRelic>();
+            skillReq = requirementTransform.gameObject.AddComponent<SourceConditionEquipment>();
             skillReq.RequiredItemID = requiredItem;
             skillReq.RequiredEnchantID = requiredEnchant;
-            skillReq.relicLevel = relicLevel;
+
+            levelReq = requirementTransform.gameObject.AddComponent<SourceConditionRelicLevel>();
+            levelReq.relicLevel = relicLevel;
+
 
             var dynamicSkillStat = requirementTransform.gameObject.AddComponent<DynamicSkillStat>();
             dynamicSkillStat.ManaCost = manaCost;
