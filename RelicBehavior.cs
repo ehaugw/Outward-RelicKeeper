@@ -12,16 +12,6 @@ namespace RelicKeeper
 {
     public static class RelicBehavior
     {
-        public static List<Item> GetEquippedRelics(Character character)
-        {
-            var result = character.Inventory.GetOwnedItems(TinyTagManager.GetOrMakeTag(IDs.RelicTag)).Where(x => x.DisplayedOnBag).ToList();
-            if (character.LeftHandEquipment?.HasTag(TinyTagManager.GetOrMakeTag(IDs.RelicTag)) ?? false)
-            {
-                result.Add(character.LeftHandEquipment);
-            }
-            return result;
-        }
-
         public static bool HasRelicEquippedOrOnBackpack(Character character, int RequiredItemID = 0, int RequiredEnchantID = 0)
         {
             if (character?.Inventory?.Equipment is CharacterEquipment characterEquipment)
