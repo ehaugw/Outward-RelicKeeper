@@ -55,10 +55,10 @@ namespace RelicKeeper
 
             //DONE
             RelicWard.Apply(skill, IDs.basicRelicID);
+            PlagueBlast.Apply(skill, IDs.mushroomShieldID);
             
             //IN PROGRESS
             DivineIntervention.Apply(skill, IDs.goldLichTalismanID);
-            PlagueBlast.Apply(skill, IDs.woodooCharmID);
             RelicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
             Cleanse.Apply(skill, IDs.lanternOfSouldID);
             AddGreaterFireImbueOfffHand.Apply(skill, IDs.redLadysDaggerID);

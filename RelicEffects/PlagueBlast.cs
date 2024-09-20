@@ -15,7 +15,7 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 25, cooldown: 20);
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 85, cooldown: 100, relicLevel: 1);
 
             var damageBlast = new SL_ShootBlast()
             {
