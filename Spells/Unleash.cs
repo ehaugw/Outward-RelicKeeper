@@ -61,6 +61,7 @@ namespace RelicKeeper
             PlagueBlast.Apply(skill, IDs.woodooCharmID);
             RelicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
             Cleanse.Apply(skill, IDs.lanternOfSouldID);
+            AddGreaterFireImbueOfffHand.Apply(skill, IDs.redLadysDaggerID);
 
             return skill;
         }

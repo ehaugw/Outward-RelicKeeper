@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Effects\TameBeastEffect.cs" />
     <Compile Include="RelicEffects\Cleanse.cs" />
+    <Compile Include="RelicEffects\AddGreaterFireImbue.cs" />
     <Compile Include="RelicPassives.cs" />
     <Compile Include="Items\AlphaTuanosaurTrinket.cs" />
     <Compile Include="Items\BasicRelic.cs" />
