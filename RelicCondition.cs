@@ -24,7 +24,7 @@ namespace RelicKeeper
         public static RelicCondition Apply(
             Skill skill, int requiredItem, float manaCost=0, float cooldown=2, float staminaCost=0, float healthCost=0, float durabilityCost=0,
             Character.SpellCastType? castType=null, Character.SpellCastModifier? castModifier=null, float? mobileCastMovementMult=null, int? castSheatheRequired=null, bool? castLocomotionEnabled=null,
-            int requiredEnchant = 0
+            int requiredEnchant = 0, int relicLevel = 0
         )
         {
             
@@ -32,14 +32,16 @@ namespace RelicKeeper
 
 
             var requirementTransform = TinyGameObjectManager.GetOrMake(relicCondition.ActivationEffectsContainer.transform, EffectSourceConditions.EffectSourceConditions.SOURCE_CONDITION_CONTAINER, true, true);
-            var skillReq = requirementTransform.gameObject.AddComponent<SourceConditionEquipment>();
+            var skillReq = requirementTransform.gameObject.AddComponent<SourceConditionRelic>();
             skillReq.RequiredItemID = requiredItem;
             skillReq.RequiredEnchantID = requiredEnchant;
+            skillReq.relicLevel = relicLevel;
 
             requirementTransform = TinyGameObjectManager.GetOrMake(relicCondition.EffectsContainer.transform, EffectSourceConditions.EffectSourceConditions.SOURCE_CONDITION_CONTAINER, true, true);
-            skillReq = requirementTransform.gameObject.AddComponent<SourceConditionEquipment>();
+            skillReq = requirementTransform.gameObject.AddComponent<SourceConditionRelic>();
             skillReq.RequiredItemID = requiredItem;
             skillReq.RequiredEnchantID = requiredEnchant;
+            skillReq.relicLevel = relicLevel;
 
             var dynamicSkillStat = requirementTransform.gameObject.AddComponent<DynamicSkillStat>();
             dynamicSkillStat.ManaCost = manaCost;
