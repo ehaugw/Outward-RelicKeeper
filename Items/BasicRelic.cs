@@ -55,7 +55,7 @@ namespace RelicKeeper
             myitem.ApplyTemplate();
             var item = ResourcesPrefabManager.Instance.GetItemPrefab(myitem.New_ItemID) as Equipment;
             item.BagCategorySlot = Item.BagCategorySlotType.Lantern;
-            item.IKType = Equipment.IKMode.None;
+            item.IKType = Equipment.IKMode.Lantern;
 
             return item as Item;
         }
