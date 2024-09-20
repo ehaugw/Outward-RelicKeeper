@@ -15,7 +15,18 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 10, durabilityCost: 0, cooldown: 0, castType: Character.SpellCastType.Cleanse);
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 10, durabilityCost: 0, cooldown: 0, castType: Character.SpellCastType.Cleanse, relicLevel: 2);
+
+            foreach (var transform in new Transform[] { relicCondition.ActivationEffectsContainer.transform, relicCondition.EffectsContainer.transform })
+            {
+                var requirementTransform = TinyGameObjectManager.GetOrMake(transform, EffectSourceConditions.EffectSourceConditions.SOURCE_CONDITION_CONTAINER, true, true);
+                var itemReq = requirementTransform.gameObject.AddComponent<SourceConditionItemInInventory>();
+                itemReq.RequiredItemID = IDs.manaStoneID;
+                itemReq.Amount = 1;
+
+                var corruptionReq = requirementTransform.gameObject.AddComponent<SourceConditionCorruption>();
+                corruptionReq.Corruption = 300;
+            }
 
             var addBleed = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addBleed.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab(IDs.extremeBleedNameID);
@@ -25,6 +36,13 @@ namespace RelicKeeper
 
             var decayDamage = relicCondition.EffectsContainer.gameObject.AddComponent<PunctualDamage>();
             decayDamage.Damages = new DamageType[] { new DamageType(DamageType.Types.Decay, 65) };
+
+            var addDarkStone = relicCondition.EffectsContainer.gameObject.AddComponent<CreateItemEffect>();
+            addDarkStone.ItemToCreate = ResourcesPrefabManager.Instance.GetItemPrefab(IDs.darkStoneID);
+
+            var removeManaStone = relicCondition.EffectsContainer.gameObject.AddComponent<RemoveItemFromInventory>();
+            removeManaStone.ItemID = IDs.manaStoneID;
+
         }
     }
 }
