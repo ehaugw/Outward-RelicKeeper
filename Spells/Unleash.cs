@@ -29,8 +29,6 @@ namespace RelicKeeper
                 MobileCastMovementMult = -1f,
                 CastSheatheRequired = 0,
 
-                RequiredWeaponTags = new string[] { IDs.RelicTag },
-
                 Cooldown = 2,
                 StaminaCost = 0,
                 HealthCost = 0,
