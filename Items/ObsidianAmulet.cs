@@ -31,9 +31,6 @@ namespace RelicKeeper
 
                 Tags = TinyTagManager.GetOrMakeTags(new string[]
                 {
-                    IDs.TrinketTag,
-                    IDs.HandsFreeTag,
-                    IDs.RelicTag,
                     IDs.ItemTag,
                 }),
                 SLPackName = RelicKeeper.ModFolderName,
