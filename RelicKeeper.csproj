@@ -41,6 +41,7 @@
     <Compile Include="Effects\TameBeastEffect.cs" />
     <Compile Include="RelicEffects\Cleanse.cs" />
     <Compile Include="RelicEffects\AddGreaterFireImbueOfffHand.cs" />
+    <Compile Include="RelicEffects\RevealSoul.cs" />
     <Compile Include="RelicEffects\FireSigil.cs" />
     <Compile Include="RelicPassives.cs" />
     <Compile Include="Items\AlphaTuanosaurTrinket.cs" />
