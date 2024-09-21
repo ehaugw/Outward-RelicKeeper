@@ -55,7 +55,7 @@ namespace RelicKeeper
 
             // DONE
             RelicPush.Apply(skill, IDs.basicRelicID);
-            AddGreaterFireImbueOfffHand.Apply(skill, IDs.redLadysDaggerID);
+            AddChaosImbueOffhand.Apply(skill, IDs.redLadysDaggerID);
             RevealSoul.Apply(skill, IDs.lanternOfSouldID);
             MeleeJinx.Apply(skill, IDs.woodooCharmID);
 

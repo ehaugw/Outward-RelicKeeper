@@ -40,7 +40,7 @@
   <ItemGroup>
     <Compile Include="Effects\TameBeastEffect.cs" />
     <Compile Include="RelicEffects\Cleanse.cs" />
-    <Compile Include="RelicEffects\AddGreaterFireImbueOfffHand.cs" />
+    <Compile Include="RelicEffects\AddChaosImbueOffhand.cs" />
     <Compile Include="RelicEffects\RevealSoul.cs" />
     <Compile Include="RelicEffects\FireSigil.cs" />
     <Compile Include="RelicPassives.cs" />
@@ -115,8 +115,15 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Defed\Outward Definitive Edition_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Defed\Outward Definitive Edition_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CustomWeaponBehaviour\CustomWeaponBehaviour.csproj">
+      <Project>{d736b5b6-7652-4eee-8e3d-175c0461a4b2}</Project>
+      <Name>CustomWeaponBehaviour</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EffectSourceConditions\EffectSourceConditions.csproj">
       <Project>{451d5546-0a6e-4183-92d2-4720ed3c2795}</Project>
       <Name>EffectSourceConditions</Name>

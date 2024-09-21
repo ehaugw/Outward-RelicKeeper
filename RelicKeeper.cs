@@ -60,6 +60,7 @@
             channelRelicStatusEffectInstance = EffectInitializer.MakeChannelRelicPrefab();
             divineInterventionStatusEffectInstance = EffectInitializer.MakeDivineInterventionPrefab();
             relicProtectionEffectInstance = EffectInitializer.MakeRelicProtectionPrefab();
+            EffectInitializer.MakeChaosImbue();
 
             //RELIC SPELLS
             UseRelic.Init(IDs.useRelicID);
