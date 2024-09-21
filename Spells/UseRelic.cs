@@ -55,12 +55,14 @@ namespace RelicKeeper
 
             // DONE
             RelicPush.Apply(skill, IDs.basicRelicID);
+            AddGreaterFireImbueOfffHand.Apply(skill, IDs.redLadysDaggerID);
+            MeleeJinx.Apply(skill, IDs.woodooCharmID);
 
             //IN PROGRESS
-            MeleeJinx.Apply(skill, IDs.woodooCharmID);
-            BasicHeal.Apply(skill, IDs.goldLichTalismanID);
-            RunicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
-            TameBeast.Apply(skill, IDs.obsidianAmuletID);
+            //BasicHeal.Apply(skill, IDs.goldLichTalismanID);
+            //RunicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
+            //TameBeast.Apply(skill, IDs.obsidianAmuletID);
+
             return skill;
         }
     }
