@@ -17,7 +17,7 @@ namespace RelicKeeper
         {
             var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 10, durabilityCost: 0, cooldown: 0, castType: Character.SpellCastType.Cleanse, relicLevel: 2);
 
-            foreach (var transform in new Transform[] { relicCondition.ActivationEffectsContainer.transform, relicCondition.EffectsContainer.transform })
+            foreach (var transform in new Transform[] { relicCondition.ActivationEffectsContainer, relicCondition.EffectsContainer })
             {
                 var requirementTransform = TinyGameObjectManager.GetOrMake(transform, EffectSourceConditions.EffectSourceConditions.SOURCE_CONDITION_CONTAINER, true, true);
                 var itemReq = requirementTransform.gameObject.AddComponent<SourceConditionItemInInventory>();
