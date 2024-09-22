@@ -59,7 +59,6 @@
     <Compile Include="RelicEffects\RunicProtection.cs" />
     <Compile Include="RelicEffects\AmplifiedRunicProtection.cs" />
     <Compile Include="RelicEffects\DivineIntervention.cs" />
-    <Compile Include="RelicCondition.cs" />
     <Compile Include="RelicEffects\BasicHeal.cs" />
     <Compile Include="RPCManager.cs" />
     <Compile Include="EffectInitializer.cs" />
@@ -68,7 +67,6 @@
     <Compile Include="RelicEffects\MeleeJinx.cs" />
     <Compile Include="SkillTreesAndTrainers\RelicKeeperSkillTree.cs" />
     <Compile Include="SkillTreesAndTrainers\HarmalanNPC.cs" />
-    <Compile Include="SourceConditionalEffects\SourceConditionRelicLevel.cs" />
     <Compile Include="Spells\ArcaneInfluence.cs" />
     <Compile Include="Spells\Overchannel.cs" />
     <Compile Include="Spells\MythicLore.cs" />
@@ -135,6 +133,10 @@
     <ProjectReference Include="..\Outward-SideLoader\src\SideLoader.csproj">
       <Project>{69b2c7b7-d715-4002-b009-f84ada52f8cc}</Project>
       <Name>SideLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RelicCondition\RelicCondition.csproj">
+      <Project>{e280e129-16fe-412b-8929-9f8d0f440035}</Project>
+      <Name>RelicCondition</Name>
     </ProjectReference>
     <ProjectReference Include="..\SynchronizedWorldObjects\SynchronizedWorldObjects.csproj">
       <Project>{bada105e-b03e-49e0-a87e-95af55944022}</Project>
