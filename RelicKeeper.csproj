@@ -118,9 +118,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomWeaponBehaviour\CustomWeaponBehaviour.csproj">
-      <Project>{d736b5b6-7652-4eee-8e3d-175c0461a4b2}</Project>
-      <Name>CustomWeaponBehaviour</Name>
+    <ProjectReference Include="..\BaseDamageModifiers\BaseDamageModifiers.csproj">
+      <Project>{0e3a3ef3-64b4-4eee-bcfa-9e80bba7d284}</Project>
+      <Name>BaseDamageModifiers</Name>
     </ProjectReference>
     <ProjectReference Include="..\EffectSourceConditions\EffectSourceConditions.csproj">
       <Project>{451d5546-0a6e-4183-92d2-4720ed3c2795}</Project>

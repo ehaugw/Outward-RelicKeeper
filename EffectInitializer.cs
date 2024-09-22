@@ -9,7 +9,6 @@ using EffectSourceConditions;
 namespace RelicKeeper
 {
     using EffectSourceConditions;
-    using CustomWeaponBehaviour;
     using UnityEngine;
 
     class EffectInitializer
@@ -49,7 +48,7 @@ namespace RelicKeeper
             var main = fx.Find("FireParticlesLargeCore").GetComponent<ParticleSystem>().main;
             main.startColor = new ParticleSystem.MinMaxGradient(new Color(1f, 0.3f, 0.4f, 0.5f), new Color(0.5f, 0.0f, 0.1f, 0.5f));
 
-            CustomWeaponBehaviour.GeneralWeaponDamageModifiers += delegate (Weapon weapon, DamageList original, ref DamageList result)
+            BaseDamageModifiers.BaseDamageModifiers.WeaponDamageModifiers += delegate (Weapon weapon, DamageList original, ref DamageList result)
             {
                 if (weapon?.HasImbuePreset(IDs.chaosImbueID) ?? false)
                 {
