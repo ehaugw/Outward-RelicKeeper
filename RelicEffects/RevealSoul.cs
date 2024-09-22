@@ -17,7 +17,7 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 50, cooldown: 300, castType: Character.SpellCastType.GongStrike, relicLevel: 2, castModifier: Character.SpellCastModifier.Immobilized, mobileCastMovementMult: 0);
+            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 50, cooldown: 300, castType: Character.SpellCastType.GongStrike, relicLevel: 1, castModifier: Character.SpellCastModifier.Immobilized, mobileCastMovementMult: 0);
 
             var summon = relicCondition.EffectsContainer.gameObject.AddComponent<Summon>();
             summon.PositionType = Summon.SummonPositionTypes.InFrontOfTarget;
