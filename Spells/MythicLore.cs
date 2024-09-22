@@ -20,7 +20,7 @@ namespace RelicKeeper
                 New_ItemID = IDs.mythicLoreID,
                 SLPackName = RelicKeeper.ModFolderName,
                 SubfolderName = "MythicLore",
-                Description = "Enables you to Use and Unleash mythic relics",
+                Description = "Enables you to Use and Unleash mythic relic effects.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,

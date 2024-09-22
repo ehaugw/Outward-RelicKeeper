@@ -20,7 +20,7 @@ namespace RelicKeeper
                 New_ItemID = IDs.relicLoreID,
                 SLPackName = RelicKeeper.ModFolderName,
                 SubfolderName = "RelicLore",
-                Description = "Enables you to Use and Unleash rare relics",
+                Description = "Enables you to Use and Unleash rare relic effects.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,
