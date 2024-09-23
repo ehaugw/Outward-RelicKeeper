@@ -15,7 +15,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 1, cooldown: 2);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Used for testing. Should not be here. Please notify the mod author.",
+                manaCost: 14, durabilityCost: 1, cooldown: 2
+            );
 
             var damageBlast = new SL_ShootBlast()
             {

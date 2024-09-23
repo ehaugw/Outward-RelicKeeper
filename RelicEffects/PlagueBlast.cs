@@ -15,7 +15,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 85, cooldown: 100, relicLevel: 1, castModifier: Character.SpellCastModifier.Immobilized, mobileCastMovementMult: 0, castType: Character.SpellCastType.GongStrike);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Creates a cloud of spores that inflicts Plague on all nearby creatures.",
+                manaCost: 14, durabilityCost: 85, cooldown: 100, relicLevel: 1, castModifier: Character.SpellCastModifier.Immobilized, mobileCastMovementMult: 0, castType: Character.SpellCastType.GongStrike
+            );
 
             var damageBlast = new SL_ShootBlast()
             {

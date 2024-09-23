@@ -15,7 +15,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 7, durabilityCost: 1, cooldown: 8);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "High Impact in a wide area in front of the caster.",
+                manaCost: 7, durabilityCost: 1, cooldown: 8
+            );
 
             var damageBlast = new SL_ShootBlast()
             {

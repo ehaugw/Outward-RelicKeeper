@@ -19,7 +19,10 @@ namespace RelicKeeper
 
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 1, cooldown: 2);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Transfers some damage taken to the relic.",
+                manaCost: 14, durabilityCost: 1, cooldown: 2
+            );
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab("RelicProtection");
             addStatusEffect.BaseChancesToContract = 100;

@@ -9,10 +9,12 @@
     using System.IO;
     using SynchronizedWorldObjects;
     using InstanceIDs;
+    using RelicCondition;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(EffectSourceConditions.GUID, EffectSourceConditions.VERSION)]
+    [BepInDependency(RelicCondition.GUID, RelicCondition.VERSION)]
     [BepInDependency(TinyHelper.GUID, TinyHelper.VERSION)]
     [BepInDependency(SynchronizedWorldObjects.GUID, SynchronizedWorldObjects.VERSION)]
 

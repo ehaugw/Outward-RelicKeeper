@@ -17,7 +17,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 50, durabilityCost: 50, cooldown: 2, relicLevel: 2);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Protects the user from lethal damage.",
+                manaCost: 50, durabilityCost: 50, cooldown: 2, relicLevel: 2
+            );
 
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab("DivineIntervention");

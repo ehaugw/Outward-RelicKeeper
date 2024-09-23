@@ -15,7 +15,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 10, durabilityCost: 0, cooldown: 0, castType: Character.SpellCastType.Cleanse, relicLevel: 2);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Requires 50% Corruption and a Mana Stone. Creates a Dark Stone, removes 30% Corruption, suffer Extreme Bleeding and 65 Decay Decay damage.",
+                manaCost: 10, durabilityCost: 0, cooldown: 0, castType: Character.SpellCastType.Cleanse, relicLevel: 2
+            );
 
             foreach (var transform in new Transform[] { relicCondition.ActivationEffectsContainer, relicCondition.EffectsContainer })
             {

@@ -15,7 +15,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 7, durabilityCost: 1);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Makes a beast friendly towards you",
+                manaCost: 7, durabilityCost: 1
+            );
 
             var damageBlast = new SL_ShootBlast()
             {

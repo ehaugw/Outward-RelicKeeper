@@ -17,7 +17,10 @@ namespace RelicKeeper
     {
         public static void Apply(Skill skill, int requiredItem)
         {
-            var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 7, durabilityCost: 2, cooldown: 15, castType: Character.SpellCastType.Bubble);
+            var relicCondition = RelicConditionBuilder.Apply(
+                skill, requiredItem, "Envelops you in Mana and, for an instant, you become immune to Damage.",
+                manaCost: 7, durabilityCost: 2, cooldown: 15, castType: Character.SpellCastType.Bubble
+            );
 
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
             addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab(IDs.manaWardID);
