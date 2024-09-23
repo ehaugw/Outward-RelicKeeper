@@ -26,7 +26,7 @@ namespace RelicKeeper
                     new SL_SkillRow() { RowIndex = 1, Slots = new List<SL_BaseSkillSlot>() {
                             new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 50, SkillID = IDs.useRelicID,                        Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
                             new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 50, SkillID = IDs.unleashID,                         Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
-                            new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.manaFlowID,                        Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
+                            new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.relicFundamentalsID,               Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
                     } },
 
                     new SL_SkillRow() { RowIndex = 2, Slots = new List<SL_BaseSkillSlot>() {
@@ -42,8 +42,8 @@ namespace RelicKeeper
                             {
                                 ColumnIndex = 2,
                                 RequiredSkillSlot = Vector2.zero,
-                                Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.mythicLoreID,       RequiredSkillSlot = new Vector2(3, 2)},
-                                Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.useRelic2ID,        RequiredSkillSlot = new Vector2(3, 2)},
+                                Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.arcaneInfluenceID,  RequiredSkillSlot = new Vector2(3, 2)},
+                                Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.manaFlowID,         RequiredSkillSlot = new Vector2(3, 2)},
                             }
                         }
                     },
@@ -54,8 +54,8 @@ namespace RelicKeeper
                             {
                                 ColumnIndex = 2,
                                 RequiredSkillSlot = Vector2.zero,
-                                Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.arcaneInfluenceID,  RequiredSkillSlot = new Vector2(3, 2)},
-                                Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.overchannelID,      RequiredSkillSlot = new Vector2(3, 2)},
+                                Choice1 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.mythicLoreID,       RequiredSkillSlot = new Vector2(3, 2)},
+                                Choice2 = new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.useRelic2ID,        RequiredSkillSlot = new Vector2(3, 2)},
                             }
                         }
                     }
