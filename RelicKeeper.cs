@@ -47,9 +47,9 @@
             WoodooCharm.MakeItem();
 
             //RELIC RECIPES
-            GoldLichTalisman.MakeRecipe();
-            AlphaTuanosaurTrinket.MakeRecipe();
-            ObsidianAmulet.MakeRecipe();
+            //GoldLichTalisman.MakeRecipe();
+            //AlphaTuanosaurTrinket.MakeRecipe();
+            //ObsidianAmulet.MakeRecipe();
             WoodooCharm.MakeRecipe();
 
             //EFFECTS
