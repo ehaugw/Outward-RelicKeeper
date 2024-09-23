@@ -29,7 +29,7 @@ namespace RelicKeeper
                 MobileCastMovementMult = 0.3f,
                 CastSheatheRequired = 0,
 
-                Cooldown = 2,
+                Cooldown = 300,
                 StaminaCost = 0,
                 HealthCost = 0,
                 ManaCost = 0,
