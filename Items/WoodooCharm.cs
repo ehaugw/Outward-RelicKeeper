@@ -59,5 +59,36 @@ namespace RelicKeeper
 
             return item as Item;
         }
+
+        public static Item MakeRecipe()
+        {
+            string newUID = RelicKeeper.GUID + "." + SubfolderName.ToLower() + "recipe";
+            new SL_Recipe()
+            {
+                StationType = Recipe.CraftingType.Survival,
+                Results = new List<SL_Recipe.ItemQty>() {
+                    new SL_Recipe.ItemQty() { Quantity = 1, ItemID = IDs.woodooCharmID },
+                },
+                Ingredients = new List<SL_Recipe.Ingredient>() {
+                    new SL_Recipe.Ingredient() { Type = RecipeIngredient.ActionTypes.AddSpecificIngredient, Ingredient_ItemID = IDs.linenClothID },
+                    new SL_Recipe.Ingredient() { Type = RecipeIngredient.ActionTypes.AddSpecificIngredient, Ingredient_ItemID = IDs.woodID },
+                    new SL_Recipe.Ingredient() { Type = RecipeIngredient.ActionTypes.AddSpecificIngredient, Ingredient_ItemID = IDs.occultRemainsID }
+                },
+                UID = newUID,
+            }.ApplyTemplate();
+
+            var myitem = new SL_RecipeItem()
+            {
+                Name = "Crafting: " + ItemName,
+                Target_ItemID = IDs.arbitrarySurvivalRecipeID,
+                New_ItemID = IDs.woodooCharmRecipeID,
+                EffectBehaviour = EditBehaviours.Override,
+                RecipeUID = newUID
+            };
+            myitem.ApplyTemplate();
+            var item = ResourcesPrefabManager.Instance.GetItemPrefab(myitem.New_ItemID);
+
+            return item;
+        }
     }
 }

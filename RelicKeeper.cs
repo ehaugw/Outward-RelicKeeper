@@ -55,6 +55,7 @@
             GoldLichTalisman.MakeRecipe();
             AlphaTuanosaurTrinket.MakeRecipe();
             ObsidianAmulet.MakeRecipe();
+            WoodooCharm.MakeRecipe();
 
             //EFFECTS
             divineInterventionStatusEffectInstance = EffectInitializer.MakeDivineInterventionPrefab();
