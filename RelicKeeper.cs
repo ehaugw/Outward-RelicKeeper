@@ -40,7 +40,6 @@
             HarmalanNPC.Init();
 
             SL.OnPacksLoaded += OnPacksLoaded;
-            //SL.OnSceneLoaded += OnSceneLoadedEquipment;
         }
         private void OnPacksLoaded()
         {
@@ -75,50 +74,5 @@
 
             RelicKeeperSkillTree.SetupSkillTree(ref RelicKeeperSkillTreeInstance);
         }
-
-        //private void OnSceneLoadedEquipment()
-        //{
-        //    foreach (GameObject obj in Resources.FindObjectsOfTypeAll<GameObject>().Where(x => x.name == "HumanSNPC_Blacksmith" && (x.GetComponentInChildren<Merchant>()?.ShopName ?? "") == "Vyzyrinthrix the Blacksmith"))
-        //    {
-        //        if (obj.GetComponentsInChildren<GuaranteedDrop>()?.FirstOrDefault(table => table.ItemGenatorName == "Recipes") is GuaranteedDrop recipeTableBlacksmith)
-        //        {
-        //            if (SideLoader.At.GetField<GuaranteedDrop>(recipeTableBlacksmith, "m_itemDrops") is List<BasicItemDrop> drops)
-        //            {
-        //                foreach (Item item in new Item[] { })
-        //                {
-        //                    //Used to say DroppedItem = item
-        //                    drops.Add(new BasicItemDrop() { ItemRef = item, MaxDropCount = 1, MinDropCount = 1 });
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    if (GameObject.Find("UNPC_LaineAberforthA")?.GetComponentsInChildren<GuaranteedDrop>()?.FirstOrDefault(table => table.ItemGenatorName == "Recipes") is GuaranteedDrop recipeTableLaine)
-        //    {
-        //        if (SideLoader.At.GetField<GuaranteedDrop>(recipeTableLaine, "m_itemDrops") is List<BasicItemDrop> drops)
-        //        {
-        //            foreach (Item item in new Item[] { })
-        //            {
-        //                //Used to say DroppedItem = item
-        //                drops.Add(new BasicItemDrop() { ItemRef = item, MaxDropCount = 1, MinDropCount = 1 });
-        //            }
-        //        }
-        //    }
-
-        //    foreach (var transform in new GameObject[] { GameObject.Find("UNPC_MathiasA (1)"), GameObject.Find("UNPC_MathiasA (2)") })
-        //    {
-        //        if (transform?.GetComponentsInChildren<GuaranteedDrop>()?.FirstOrDefault(table => table.ItemGenatorName == "Recipes") is GuaranteedDrop recipeTableMathias)
-        //        {
-        //            if (SideLoader.At.GetField<GuaranteedDrop>(recipeTableMathias, "m_itemDrops") is List<BasicItemDrop> drops)
-        //            {
-        //                foreach (Item item in new Item[] { talismanOfRecoveryInstance, alphaTuanosaurTrinketInstance, obsidianAmuletInstance })
-        //                {
-        //                    //Used to say DroppedItem = item
-        //                    drops.Add(new BasicItemDrop() { ItemRef = item, MaxDropCount = 1, MinDropCount = 1 });
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
