@@ -68,7 +68,7 @@
             ManaFlow.Init();
             RelicLore.Init();
             MythicLore.Init();
-            Overchannel.Init();
+            RelicFundamentals.Init();
             ArcaneInfluence.Init();
 
             RelicKeeperSkillTree.SetupSkillTree(ref RelicKeeperSkillTreeInstance);

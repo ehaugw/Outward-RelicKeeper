@@ -68,7 +68,7 @@
     <Compile Include="SkillTreesAndTrainers\RelicKeeperSkillTree.cs" />
     <Compile Include="SkillTreesAndTrainers\HarmalanNPC.cs" />
     <Compile Include="Spells\ArcaneInfluence.cs" />
-    <Compile Include="Spells\Overchannel.cs" />
+    <Compile Include="Spells\RelicFundamentals.cs" />
     <Compile Include="Spells\MythicLore.cs" />
     <Compile Include="Spells\RelicLore.cs" />
     <Compile Include="Spells\ManaFlow.cs" />
