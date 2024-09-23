@@ -90,3 +90,5 @@ backup:
 	cp -u resources/artsource/*.blend ../../OutwardModdingGraphicsBackup/resources/artsource
 	cp -u resources/artsource/*.spp ../../OutwardModdingGraphicsBackup/resources/artsource
 	cp -u resources/icons/*.pdn ../../OutwardModdingGraphicsBackup/resources/icons
+edit:
+	nvim ../Descriptions/$(modname).py
