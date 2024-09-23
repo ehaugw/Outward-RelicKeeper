@@ -20,12 +20,16 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
+	mkdir -p public/$(sideloaderpath)/Items/Unleash/Textures
+	cp -u resources/icons/unleash.png                        	public/$(sideloaderpath)/Items/Unleash/Textures/icon.png
+	cp -u resources/icons/unleash.png                        	public/$(sideloaderpath)/Items/Unleash/Textures/skillicon.png
+	mkdir -p public/$(sideloaderpath)/Items/UseRelic/Textures
+	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/icon.png
+	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/BasicRelic/Textures/
-	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/BasicRelic/Textures/icon.png
+	cp -u resources/icons/basic_relic.png                       public/$(sideloaderpath)/Items/BasicRelic/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/
 	cp -u resources/icons/woodoo_charm.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
-	mkdir -p public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/
-	cp -u resources/icons/basic_relic.png                      public/$(sideloaderpath)/Items/GoldLichTalisman/Textures/icon.png
 	
 	cp -u $(unityassetbundles)/basic_relic                                             public/$(sideloaderpath)/AssetBundles/basic_relic
 	cp -u $(unityassetbundles)/woodoo_charm                                            public/$(sideloaderpath)/AssetBundles/woodoo_charm
