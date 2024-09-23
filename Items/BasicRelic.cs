@@ -28,7 +28,7 @@ namespace RelicKeeper
                 Description = "",
                 StatsHolder = new SL_ItemStats()
                 {
-                    MaxDurability = 20,
+                    MaxDurability = 80,
                 },
                 BehaviorOnNoDurability = Item.BehaviorOnNoDurabilityType.Destroy,
                 RepairedInRest = false,

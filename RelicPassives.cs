@@ -71,7 +71,7 @@ namespace RelicKeeper
         {
             if (!(_damageSource is StatusEffect) && RelicPassives.CanProtectDamageWithRelic(__instance) is Equipment protectiveRelic && protectiveRelic.CurrentDurability > 0)
             {
-                protectiveRelic.ReduceDurability(_damage.TotalDamage * RelicPassives.RelicProtectionEfficiency * 0.25f);
+                protectiveRelic.ReduceDurability(_damage.TotalDamage * RelicPassives.RelicProtectionEfficiency);
                 _damage *= (1 - RelicPassives.RelicProtectionEfficiency);
                 return;
             }

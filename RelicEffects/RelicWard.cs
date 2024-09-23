@@ -19,7 +19,7 @@ namespace RelicKeeper
         {
             var relicCondition = RelicConditionBuilder.Apply(
                 skill, requiredItem, "Envelops you in Mana and, for an instant, you become immune to Damage.",
-                manaCost: 7, durabilityCost: 2, cooldown: 15, castType: Character.SpellCastType.Bubble
+                manaCost: 7, durabilityCost: 8, cooldown: 20, castType: Character.SpellCastType.Bubble
             );
 
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
