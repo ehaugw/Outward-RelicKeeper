@@ -13,6 +13,35 @@ namespace RelicKeeper
 
     class EffectInitializer
     {
+        public static StatusEffect MakeCurseOfVulnrability()
+        {
+
+            new SL_StatusEffect()
+            {
+                Name = "Curse of Vulnerability",
+                Description = "You are cursed: your status effect resistance is reduced.",
+                StatusIdentifier = "CurseOfVulnerability",
+                DisplayedInHUD = true,
+                IsHidden = false,
+                IsMalusEffect = true,
+                Lifespan = 80f,
+                TargetStatusIdentifier = "Mana Ratio Recovery 3",
+                EffectBehaviour = EditBehaviours.Destroy,
+                Effects = new SL_EffectTransform[] {
+                    new SL_EffectTransform() {
+                        Effects     = new SL_Effect[] {
+                            new SL_AffectStat() {
+                                AffectQuantity  = -15,
+                                Stat_Tag        = IDs.statTagStatusEffectResistance,
+                                Duration = -1,
+                            }
+                        }
+                    }
+                }
+            }.ApplyTemplate();
+            return ResourcesPrefabManager.Instance.GetStatusEffectPrefab("CurseOfVulnerability");
+        }
+
         public static ImbueEffectPreset MakeChaosImbue()
         {
             //var requireDivineFavour = false;

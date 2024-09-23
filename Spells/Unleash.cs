@@ -58,7 +58,8 @@ namespace RelicKeeper
             FireSigil.Apply(skill, IDs.redLadysDaggerID);
             PlagueBlast.Apply(skill, IDs.mushroomShieldID);
             Cleanse.Apply(skill, IDs.lanternOfSouldID);
-
+            CurseOfVulnerabilityBlast.Apply(skill, IDs.woodooCharmID);
+            
             //IN PROGRESS
             //DivineIntervention.Apply(skill, IDs.goldLichTalismanID);
             //RelicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
