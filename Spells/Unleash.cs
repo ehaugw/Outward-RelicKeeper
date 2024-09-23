@@ -55,6 +55,7 @@ namespace RelicKeeper
 
             //DONE
             RelicWard.Apply(skill, IDs.basicRelicID);
+            RelicWard.Apply(skill, IDs.gildedRelicID);
             FireSigil.Apply(skill, IDs.redLadysDaggerID);
             PlagueBlast.Apply(skill, IDs.mushroomShieldID);
             Cleanse.Apply(skill, IDs.lanternOfSouldID);

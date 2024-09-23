@@ -47,13 +47,15 @@
             AlphaTuanosaurTrinket.MakeItem();
             GoldLichTalisman.MakeItem();
             WoodooCharm.MakeItem();
+            GildedRelic.MakeItem();
 
             //RELIC RECIPES
             //GoldLichTalisman.MakeRecipe();
             //AlphaTuanosaurTrinket.MakeRecipe();
             //ObsidianAmulet.MakeRecipe();
             WoodooCharm.MakeRecipe();
-            BasicRelic.MakeItem();
+            BasicRelic.MakeRecipe();
+            GildedRelic.MakeRecipe();
 
             //EFFECTS
             EffectInitializer.MakeDivineInterventionPrefab();

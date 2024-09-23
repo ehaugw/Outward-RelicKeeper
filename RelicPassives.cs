@@ -30,7 +30,12 @@ namespace RelicKeeper
         {
             if (HasArcaneInfluence(character))
             {
-                return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.basicRelicID);
+                var basicRelic = RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.basicRelicID);
+                if (basicRelic)
+                {
+                    return basicRelic;
+                }
+                return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.gildedRelicID);
             }
             return null;
         }

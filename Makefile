@@ -26,11 +26,14 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Items/UseRelic/Textures
 	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/icon.png
 	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/skillicon.png
+	mkdir -p public/$(sideloaderpath)/Items/GildedRelic/Textures/
+	cp -u resources/icons/gilded_relic.png                      public/$(sideloaderpath)/Items/GildedRelic/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/BasicRelic/Textures/
 	cp -u resources/icons/basic_relic.png                       public/$(sideloaderpath)/Items/BasicRelic/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/
 	cp -u resources/icons/woodoo_charm.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
 	
+	cp -u $(unityassetbundles)/gilded_relic                                            public/$(sideloaderpath)/AssetBundles/gilded_relic
 	cp -u $(unityassetbundles)/basic_relic                                             public/$(sideloaderpath)/AssetBundles/basic_relic
 	cp -u $(unityassetbundles)/woodoo_charm                                            public/$(sideloaderpath)/AssetBundles/woodoo_charm
 
@@ -43,6 +46,9 @@ unity:
 	cp $(exports)/basic_relic/basic_relic_AlbedoTransparency.png    				$(unityassets)/basic_relic_AlbedoTransparency.png
 	cp $(exports)/basic_relic/basic_relic_MetallicSmoothness.png    				$(unityassets)/basic_relic_MetallicSmoothness.png
 	cp $(exports)/basic_relic/basic_relic_Normal.png                				$(unityassets)/basic_relic_Normal.png
+	cp $(exports)/gilded_relic/basic_relic_AlbedoTransparency.png    				$(unityassets)/gilded_relic_AlbedoTransparency.png
+	cp $(exports)/gilded_relic/basic_relic_MetallicSmoothness.png    				$(unityassets)/gilded_relic_MetallicSmoothness.png
+	cp $(exports)/gilded_relic/basic_relic_Normal.png                				$(unityassets)/gilded_relic_Normal.png
 
 publish:
 	make clean
