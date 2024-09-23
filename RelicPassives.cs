@@ -10,12 +10,29 @@ using TinyHelper;
 namespace RelicKeeper
 {
     using CharacterExtensions;
+    using UnityEngine;
+    using static MapMagic.ObjectPool;
 
     public class RelicPassives
     {
+        public const float RelicProtectionEfficiency = 0.2f;
+
+        public static bool HasArcaneInfluence(Character character)
+        {
+            return SkillRequirements.SafeHasSkillKnowledge(character, IDs.arcaneInfluenceID);
+        }
         public static bool CanCastTormentWithDrawnWeapon(Character character)
         {
-            return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && SkillRequirements.SafeHasSkillKnowledge(character, IDs.arcaneInfluenceID);
+            return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && HasArcaneInfluence(character);
+        }
+
+        public static Equipment CanProtectDamageWithRelic(Character character)
+        {
+            if (HasArcaneInfluence(character))
+            {
+                return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.basicRelicID);
+            }
+            return null;
         }
     }
 
@@ -41,6 +58,22 @@ namespace RelicKeeper
             if ((__instance.ItemID == IDs.tormentID) && RelicPassives.CanCastTormentWithDrawnWeapon(__instance?.OwnerCharacter))
             {
                 __result = 0;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Character), "ReceiveHit", new Type[] { typeof(UnityEngine.Object), typeof(DamageList), typeof(Vector3), typeof(Vector3), typeof(float), typeof(float), typeof(Character), typeof(float), typeof(bool) })]
+    public class Character_ReceiveHit_RelicProtection
+    {
+        [HarmonyPriority(500)] //higher priority means it goes first
+        [HarmonyPrefix]
+        public static void Prefix(Character __instance, ref DamageList __result, UnityEngine.Object _damageSource, ref DamageList _damage, Vector3 _hitDir, Vector3 _hitPoint, float _angle, float _angleDir, Character _dealerChar, float _knockBack, bool _hitInventory)
+        {
+            if (!(_damageSource is StatusEffect) && RelicPassives.CanProtectDamageWithRelic(__instance) is Equipment protectiveRelic && protectiveRelic.CurrentDurability > 0)
+            {
+                protectiveRelic.ReduceDurability(_damage.TotalDamage * RelicPassives.RelicProtectionEfficiency * 0.25f);
+                _damage *= (1 - RelicPassives.RelicProtectionEfficiency);
+                return;
             }
         }
     }

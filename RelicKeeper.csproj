@@ -54,7 +54,6 @@
     <Compile Include="RelicEffects\RelicWard.cs" />
     <Compile Include="RelicEffects\RelicPush.cs" />
     <Compile Include="RelicEffects\TameBeast.cs" />
-    <Compile Include="RelicEffects\RelicProtection.cs" />
     <Compile Include="RelicEffects\TestEffect.cs" />
     <Compile Include="RelicEffects\PlagueBlast.cs" />
     <Compile Include="RelicEffects\RunicProtection.cs" />

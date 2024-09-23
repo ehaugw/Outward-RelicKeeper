@@ -57,7 +57,6 @@
 
             //EFFECTS
             EffectInitializer.MakeDivineInterventionPrefab();
-            EffectInitializer.MakeRelicProtectionPrefab();
             EffectInitializer.MakeCurseOfVulnrability();
             EffectInitializer.MakeChaosImbue();
 

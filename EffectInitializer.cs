@@ -89,23 +89,6 @@ namespace RelicKeeper
             return effectPreset;
         }
 
-        public static StatusEffect MakeRelicProtectionPrefab()
-        {
-            var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
-                displayName:            "Calixa's Relic",
-                effectName:             "RelicProtection",
-                familyName:             "RelicProtection",
-                description:            "You are protected by Calixa's Relic.",
-                lifespan:               300,
-                refreshRate:            0.25f,
-                stackBehavior:          StatusEffectFamily.StackBehaviors.Override,
-                targetStatusName:       "Runic Protection",
-                isMalusEffect:          false,
-                modGUID:                RelicKeeper.GUID);
-
-            return statusEffect;
-        }
-
         public static StatusEffect MakeDivineInterventionPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(

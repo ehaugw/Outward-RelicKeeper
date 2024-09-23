@@ -12,7 +12,7 @@ namespace RelicKeeper
 {
     public static class RelicBehavior
     {
-        public static bool HasRelicEquippedOrOnBackpack(Character character, int RequiredItemID = 0, int RequiredEnchantID = 0)
+        public static Equipment HasRelicEquippedOrOnBackpack(Character character, int RequiredItemID = 0, int RequiredEnchantID = 0)
         {
             if (character?.Inventory?.Equipment is CharacterEquipment characterEquipment)
             {
@@ -25,11 +25,11 @@ namespace RelicKeeper
 
                     if (matchingItem && matchingEnchant)
                     {
-                        return true;
+                        return slot as Equipment;
                     }
                 }
             }
-            return false;
+            return null;
         }
     }
 }
