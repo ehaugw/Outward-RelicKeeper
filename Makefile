@@ -20,12 +20,18 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
+	mkdir -p public/$(sideloaderpath)/Items/RelicLore/Textures
+	cp -u resources/icons/relic_lore.png                    	public/$(sideloaderpath)/Items/RelicLore/Textures/icon.png
+	cp -u resources/icons/relic_lore_small.png              	public/$(sideloaderpath)/Items/RelicLore/Textures/skillicon.png
+	mkdir -p public/$(sideloaderpath)/Items/MythicLore/Textures
+	cp -u resources/icons/mythic_lore.png                    	public/$(sideloaderpath)/Items/MythicLore/Textures/icon.png
+	cp -u resources/icons/mythic_lore_small.png              	public/$(sideloaderpath)/Items/MythicLore/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/Unleash/Textures
 	cp -u resources/icons/unleash.png                        	public/$(sideloaderpath)/Items/Unleash/Textures/icon.png
-	cp -u resources/icons/unleash.png                        	public/$(sideloaderpath)/Items/Unleash/Textures/skillicon.png
+	cp -u resources/icons/unleash_small.png                  	public/$(sideloaderpath)/Items/Unleash/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/UseRelic/Textures
 	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/icon.png
-	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/skillicon.png
+	cp -u resources/icons/use_relic_small.png                  	public/$(sideloaderpath)/Items/UseRelic/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/GildedRelic/Textures/
 	cp -u resources/icons/gilded_relic.png                      public/$(sideloaderpath)/Items/GildedRelic/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/BasicRelic/Textures/
