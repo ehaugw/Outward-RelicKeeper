@@ -63,7 +63,6 @@
     <Compile Include="RelicEffects\BasicHeal.cs" />
     <Compile Include="RPCManager.cs" />
     <Compile Include="EffectInitializer.cs" />
-    <Compile Include="Effects\ChannelRelicEffect.cs" />
     <Compile Include="RelicKeeper.cs" />
     <Compile Include="RelicEffects\MeleeJinx.cs" />
     <Compile Include="SkillTreesAndTrainers\RelicKeeperSkillTree.cs" />
