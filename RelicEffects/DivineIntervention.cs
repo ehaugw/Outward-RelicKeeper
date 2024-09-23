@@ -20,7 +20,7 @@ namespace RelicKeeper
             var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 50, durabilityCost: 50, cooldown: 2, relicLevel: 2);
 
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
-            addStatusEffect.Status = RelicKeeper.Instance.divineInterventionStatusEffectInstance;
+            addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab("DivineIntervention");
         }
     }
 
@@ -30,7 +30,7 @@ namespace RelicKeeper
         [HarmonyPrefix]
         public static void Prefix(Character __instance, ref DamageList __result, UnityEngine.Object _damageSource, ref DamageList _damage, Vector3 _hitDir, Vector3 _hitPoint, float _angle, float _angleDir, Character _dealerChar, float _knockBack, bool _hitInventory)
         {
-            if (__instance.StatusEffectMngr?.HasStatusEffect(RelicKeeper.Instance.divineInterventionStatusEffectInstance.IdentifierName) ?? false)
+            if (__instance.StatusEffectMngr?.HasStatusEffect("DivineIntervention") ?? false)
             {
                 DamageList damageList = _damage.Clone();
                 StatusEffect statusEffect = _damageSource as StatusEffect;
@@ -40,7 +40,7 @@ namespace RelicKeeper
                 {
                     _damage.Clear();
                     //__instance.StatusEffectMngr.RemoveStatusWithIdentifierName(RelicKeeper.Instance.divineInterventionStatusEffectInstance.IdentifierName);
-                    var divineIntervention = __instance.StatusEffectMngr.GetStatusEffectOfName(RelicKeeper.Instance.divineInterventionStatusEffectInstance.IdentifierName);
+                    var divineIntervention = __instance.StatusEffectMngr.GetStatusEffectOfName("DivineIntervention");
                     if (!__instance.StatusEffectMngr.HasStatusEffect(IDs.manaWardID))
                     {
                         var status = __instance.StatusEffectMngr.AddStatusEffect(IDs.manaWardID);

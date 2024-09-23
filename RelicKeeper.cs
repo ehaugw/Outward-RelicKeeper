@@ -24,10 +24,6 @@
         public const string NAME = "Relic Keeper";
         public static string ModFolderName = Directory.GetParent(typeof(RelicKeeper).Assembly.Location).Name.ToString();
 
-        public StatusEffect channelRelicStatusEffectInstance;
-        public StatusEffect divineInterventionStatusEffectInstance;
-        public StatusEffect relicProtectionEffectInstance;
-
         public static SkillSchool RelicKeeperSkillTreeInstance;
 
         internal void Awake()
@@ -57,8 +53,8 @@
             WoodooCharm.MakeRecipe();
 
             //EFFECTS
-            divineInterventionStatusEffectInstance = EffectInitializer.MakeDivineInterventionPrefab();
-            relicProtectionEffectInstance = EffectInitializer.MakeRelicProtectionPrefab();
+            EffectInitializer.MakeDivineInterventionPrefab();
+            EffectInitializer.MakeRelicProtectionPrefab();
             EffectInitializer.MakeCurseOfVulnrability();
             EffectInitializer.MakeChaosImbue();
 

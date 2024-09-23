@@ -21,7 +21,7 @@ namespace RelicKeeper
         {
             var relicCondition = RelicCondition.Apply(skill, requiredItem, manaCost: 14, durabilityCost: 1, cooldown: 2);
             var addStatusEffect = relicCondition.EffectsContainer.gameObject.AddComponent<AddStatusEffect>();
-            addStatusEffect.Status = RelicKeeper.Instance.relicProtectionEffectInstance;
+            addStatusEffect.Status = ResourcesPrefabManager.Instance.GetStatusEffectPrefab("RelicProtection");
             addStatusEffect.BaseChancesToContract = 100;
             RelicProtectionTargetIDs.Add(requiredItem);
         }
@@ -34,7 +34,7 @@ namespace RelicKeeper
         [HarmonyPrefix]
         public static void Prefix(Character __instance, ref DamageList __result, UnityEngine.Object _damageSource, ref DamageList _damage, Vector3 _hitDir, Vector3 _hitPoint, float _angle, float _angleDir, Character _dealerChar, float _knockBack, bool _hitInventory)
         {
-            if ((__instance?.StatusEffectMngr?.HasStatusEffect(RelicKeeper.Instance.relicProtectionEffectInstance.IdentifierName) ?? false) && !(_damageSource is StatusEffect))
+            if ((__instance?.StatusEffectMngr?.HasStatusEffect("RelicProtection") ?? false) && !(_damageSource is StatusEffect))
             {
                 foreach (var itemID in RelicProtection.RelicProtectionTargetIDs)
                 {
@@ -45,7 +45,7 @@ namespace RelicKeeper
                         return;
                     }
                 }
-                __instance.StatusEffectMngr.CleanseStatusEffect(RelicKeeper.Instance.relicProtectionEffectInstance.IdentifierName);
+                __instance.StatusEffectMngr.CleanseStatusEffect("RelicProtection");
             }
         }
     }
