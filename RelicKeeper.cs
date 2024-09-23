@@ -51,6 +51,7 @@
             //AlphaTuanosaurTrinket.MakeRecipe();
             //ObsidianAmulet.MakeRecipe();
             WoodooCharm.MakeRecipe();
+            BasicRelic.MakeItem();
 
             //EFFECTS
             EffectInitializer.MakeDivineInterventionPrefab();
