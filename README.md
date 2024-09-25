@@ -16,9 +16,12 @@ What's the purpose of "Relic Keeper"?
 
 # Features
 
-The "Relic Keeper" is the closes you get to a wizard in Dungeons and Dragons. The class provides only two skills, namely **Use Relic** and **Unleash**, but the effect of those skills varies depending on the equipped relic. There are currently nine unique active relic effects, and twopassive effects. Other equipment mods, like [Crusader's Equipment](https://outward.thunderstore.io/package/ehaugw/CrusadersEquipment/ "Crusader's Equipment") provides more relic with their own unique effects
+The "Relic Keeper" is the closes you get to a wizard in Dungeons and Dragons. The class provides only two skills, namely **Use Relic** and **Unleash**, but the effect of those skills varies depending on the equipped relic. There are currently nine unique active relic effects, and twopassive effects. Other equipment mods, like [Crusader's Equipment](https://outward.thunderstore.io/package/ehaugw/CrusadersEquipment/ "Crusader's Equipment") provides more relics with their own unique effects
 
 The trainer is found inside the Blue Chamber building.
+
+
+Skills:
 
 **Use Relic** (Cooldown: varies, Mana cost: varies, Stamina cost: varies)
 
@@ -50,11 +53,81 @@ The trainer is found inside the Blue Chamber building.
 * You may benefit from passive relic effects.You may benefit from passive relic effects.
 
 
+Relics:
+
+**Basic Relic**
+Left hand or Lantern
+
+* Use Relic: Replicate **Mana Push**
+* Unleash: Replicate [Mana Ward](https://outward.gamepedia.com/Mana_Ward "Mana Ward")
+* Arcane Influence: 20% of damage taken, before reductions, are transfered to the relic
+* Durability: 80
+* Crafted from two **Petrified Wood**
+
+**Gilded Relic**
+Left hand or Lantern
+
+* Use Relic: Replicate **Mana Push**
+* Unleash: Replicate [Mana Ward](https://outward.gamepedia.com/Mana_Ward "Mana Ward")
+* Arcane Influence: 20% of damage taken, before reductions, are transfered to the relic
+* Durability: 200
+* Crafted from a **Basic Relic** and a **Gold Bar**
+
+**Red Lady's Dagger**
+Dagger
+
+* Use Relic: Apply **Chaos Imbue** to the dagger
+* Unleash: Plant a **Fire Sigil** on the ground
+* Durability: 300
+
+**Woodoo Charm**
+Left hand or Lantern
+
+* Use Relic: Melee spell that applies a random hex without sheathing the weapon
+* Unleash: Applies Curse of Vulnerability to nearby enemies
+* Arcane Influence: You can cast **Torment** with your weapon drawn
+* Durability: 100
+
+**Spore Shield**
+Shield
+
+* Unleash: Creates a lingering cloud of spores that inflicts **Plague** to enemies in it
+* Durability: 150
+
+**Mushroom Shield**
+Shield
+
+* Unleash: Creates a lingering cloud of spores that inflicts **Plague** to enemies in it
+* Durability: 85
+
+**Lantern of Souls**
+Left hand or Lantern
+
+* Use Relic: Release a soul from the lantern
+* Unleash: Replicate **Cleanse**
+
+
+Effects:
+
+**Chaos Imbue** (Permanent)
+
+* Adds 25% weapon damage as fire damage, as well as up to 10 scaling fire damage if you are 0% corrupted, down to 0% at 100% corrupted
+* Inflicts 49% **Burning** buildup to enemies on a hit
+* Causes 0.5% corruption to the player when they hit a creature
+
+**Curse of Vulnerability** (Permanent)
+
+* Decreases status effect resistance by 15% for 80 seconds
+
+
 
 
 # Patch notes
 
 
+* Version 1.0.1
+
+  * update description
 * Version 1.0.0
 
   * initial release
