@@ -20,6 +20,15 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
+	mkdir -p public/$(sideloaderpath)/Items/ManaFlow/Textures
+	cp -u resources/icons/mana_flow.png                        public/$(sideloaderpath)/Items/ManaFlow/Textures/icon.png
+	cp -u resources/icons/mana_flow_small.png                  public/$(sideloaderpath)/Items/ManaFlow/Textures/skillicon.png
+	mkdir -p public/$(sideloaderpath)/Items/RelicFundamentals/Textures
+	cp -u resources/icons/relic_fundamentals.png                public/$(sideloaderpath)/Items/RelicFundamentals/Textures/icon.png
+	cp -u resources/icons/relic_fundamentals_small.png          public/$(sideloaderpath)/Items/RelicFundamentals/Textures/skillicon.png
+	mkdir -p public/$(sideloaderpath)/Items/ArcaneInfluence/Textures
+	cp -u resources/icons/arcane_influence.png                  public/$(sideloaderpath)/Items/ArcaneInfluence/Textures/icon.png
+	cp -u resources/icons/arcane_influence_small.png            public/$(sideloaderpath)/Items/ArcaneInfluence/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/RelicLore/Textures
 	cp -u resources/icons/relic_lore.png                    	public/$(sideloaderpath)/Items/RelicLore/Textures/icon.png
 	cp -u resources/icons/relic_lore_small.png              	public/$(sideloaderpath)/Items/RelicLore/Textures/skillicon.png
