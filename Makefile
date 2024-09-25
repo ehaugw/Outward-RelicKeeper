@@ -71,12 +71,15 @@ publish:
 	rm -f $(modname).rar
 	rar a $(modname).rar -ep1 public/*
 	
-	# (cd ../Descriptions && python3 crusader.py)
+	(cd ../Descriptions && python3 RelicKeeper.py)
 	
 	cp -u resources/manifest.json public/BepInEx/
-	cp -u resources/README.md public/BepInEx/
+	cp -u README.md public/BepInEx/
 	cp -u resources/icon.png public/BepInEx/
-	(cd public/BepInEx && zip -r $(modname)_thunderstore.zip * && mv $(modname)_thunderstore.zip ../../)
+	(cd public/BepInEx && zip -r $(modname)_thunderstore.zip * && mv $(modname)_thunderstore.zip ../../thunderstore)
+	cp -u ../tcli/thunderstore.toml thunderstore/
+	(cd thunderstore && tcli publish --file $(modname)_thunderstore.zip) || true ; \
+	mv thunderstore/$(modname)_thunderstore.zip .
 
 install:
 	if [ ! -f omit.txt ]; then make forceinstall; fi
