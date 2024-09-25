@@ -22,7 +22,7 @@
     {
         public static RelicKeeper Instance;
         public const string GUID = "com.ehaugw.relickeeper";
-        public const string VERSION = "1.0.2";
+        public const string VERSION = "1.0.3";
         public const string NAME = "Relic Keeper";
         public static string ModFolderName = Directory.GetParent(typeof(RelicKeeper).Assembly.Location).Name.ToString();
 
