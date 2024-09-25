@@ -52,8 +52,8 @@
             //RELICS
             BasicRelic.MakeItem();
             ObsidianAmulet.MakeItem();
-            AlphaTuanosaurTrinket.MakeItem();
-            GoldLichTalisman.MakeItem();
+            //AlphaTuanosaurTrinket.MakeItem();
+            //GoldLichTalisman.MakeItem();
             WoodooCharm.MakeItem();
             GildedRelic.MakeItem();
 
