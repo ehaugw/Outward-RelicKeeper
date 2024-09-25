@@ -10,6 +10,7 @@ namespace RelicKeeper
 {
     public class ManaFlow
     {
+        public const float ManaCostReduction = 0.3f;
         public static Skill Init()
         {
             var myitem = new SL_Skill()
@@ -20,7 +21,7 @@ namespace RelicKeeper
                 New_ItemID = IDs.manaFlowID,
                 SLPackName = RelicKeeper.ModFolderName,
                 SubfolderName = "ManaFlow",
-                Description = "Use Relic has a lowered durability cost, but also an increased mana cost.",
+                Description = "Decreases the mana cost of Use Relic.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,

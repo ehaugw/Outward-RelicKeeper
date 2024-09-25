@@ -38,7 +38,15 @@
             HarmalanNPC.Init();
 
             SL.OnPacksLoaded += OnPacksLoaded;
+            DynamicSkillStat.ManaCostModifiers += delegate (Skill skill, float original, ref float result)
+            {
+                if (new int[] {IDs.useRelicID, IDs.useRelic2ID }.Contains(skill.ItemID) && SkillRequirements.SafeHasSkillKnowledge(skill?.OwnerCharacter, IDs.manaFlowID))
+                {
+                    result -= original * ManaFlow.ManaCostReduction;
+                }
+            };
         }
+
         private void OnPacksLoaded()
         {
             //RELICS
