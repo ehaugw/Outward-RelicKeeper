@@ -125,6 +125,9 @@ Effects:
 # Patch notes
 
 
+* Version 1.0.3
+
+  * don't include unfinished items, to ensure the mod runs smoothly
 * Version 1.0.2
 
   * update description
