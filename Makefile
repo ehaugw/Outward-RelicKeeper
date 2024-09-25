@@ -104,3 +104,5 @@ backup:
 	cp -u resources/icons/*.pdn ../../OutwardModdingGraphicsBackup/resources/icons
 edit:
 	nvim ../Descriptions/$(modname).py
+readme:
+	(cd ../Descriptions/ && python3 $(modname).py)
