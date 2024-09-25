@@ -84,7 +84,7 @@ Dagger
 Left hand or Lantern
 
 * Use Relic: Melee spell that applies a random hex without sheathing the weapon
-* Unleash: Applies Curse of Vulnerability to nearby enemies
+* Unleash: Applies **Curse of Vulnerability** to nearby enemies
 * Arcane Influence: You can cast **Torment** with your weapon drawn
 * Durability: 100
 
@@ -109,13 +109,13 @@ Left hand or Lantern
 
 Effects:
 
-**Chaos Imbue** (Permanent)
+**Chaos Imbue** (Duration: 30 seconds)
 
 * Adds 25% weapon damage as fire damage, as well as up to 10 scaling fire damage if you are 0% corrupted, down to 0% at 100% corrupted
 * Inflicts 49% **Burning** buildup to enemies on a hit
 * Causes 0.5% corruption to the player when they hit a creature
 
-**Curse of Vulnerability** (Permanent)
+**Curse of Vulnerability** (Duration: 80 seconds)
 
 * Decreases status effect resistance by 15% for 80 seconds
 
@@ -125,6 +125,9 @@ Effects:
 # Patch notes
 
 
+* Version 1.0.2
+
+  * update description
 * Version 1.0.1
 
   * update description
