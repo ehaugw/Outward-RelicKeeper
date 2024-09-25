@@ -4,3 +4,6 @@ public/
 resources/icons/basic_relic.pdn
 resources/unity/
 resources/artsource/
+*.zip
+thunderstore/*
+resources/manifest.json
