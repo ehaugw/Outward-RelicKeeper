@@ -1,7 +1,5 @@
+include Makefile.helpers
 modname = RelicKeeper
-gamepath = /mnt/c/Program\ Files\ \(x86\)/Steam/steamapps/common/Outward/Outward_Defed
-pluginpath = BepInEx/plugins
-sideloaderpath = $(pluginpath)/$(modname)/SideLoader
 exports = resources/artsource/exports
 unityassets = resources/unity/RelicKeeper/Assets
 unityassetbundles = resources/unity/RelicKeeper/Assets/AssetBundles
@@ -10,47 +8,27 @@ dependencies = BaseDamageModifiers EffectSourceConditions RelicCondition Synchro
 
 assemble:
 	# common for all mods
-	mkdir -p public/$(pluginpath)/$(modname)
-	cp -u bin/$(modname).dll public/$(pluginpath)/$(modname)/
-	for dependency in $(dependencies) ; do \
-		cp -u ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
-	done
+	rm -f -r public
+	@make dllsinto TARGET=$(modname) --no-print-directory
 	
-	mkdir -p public/$(sideloaderpath)/Items
-	mkdir -p public/$(sideloaderpath)/Texture2D
-	mkdir -p public/$(sideloaderpath)/AssetBundles
+	@make basefolders
 	
-	mkdir -p public/$(sideloaderpath)/Items/ManaFlow/Textures
-	cp -u resources/icons/mana_flow.png                        public/$(sideloaderpath)/Items/ManaFlow/Textures/icon.png
-	cp -u resources/icons/mana_flow_small.png                  public/$(sideloaderpath)/Items/ManaFlow/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/RelicFundamentals/Textures
-	cp -u resources/icons/relic_fundamentals.png                public/$(sideloaderpath)/Items/RelicFundamentals/Textures/icon.png
-	cp -u resources/icons/relic_fundamentals_small.png          public/$(sideloaderpath)/Items/RelicFundamentals/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/ArcaneInfluence/Textures
-	cp -u resources/icons/arcane_influence.png                  public/$(sideloaderpath)/Items/ArcaneInfluence/Textures/icon.png
-	cp -u resources/icons/arcane_influence_small.png            public/$(sideloaderpath)/Items/ArcaneInfluence/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/RelicLore/Textures
-	cp -u resources/icons/relic_lore.png                    	public/$(sideloaderpath)/Items/RelicLore/Textures/icon.png
-	cp -u resources/icons/relic_lore_small.png              	public/$(sideloaderpath)/Items/RelicLore/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/MythicLore/Textures
-	cp -u resources/icons/mythic_lore.png                    	public/$(sideloaderpath)/Items/MythicLore/Textures/icon.png
-	cp -u resources/icons/mythic_lore_small.png              	public/$(sideloaderpath)/Items/MythicLore/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/Unleash/Textures
-	cp -u resources/icons/unleash.png                        	public/$(sideloaderpath)/Items/Unleash/Textures/icon.png
-	cp -u resources/icons/unleash_small.png                  	public/$(sideloaderpath)/Items/Unleash/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/UseRelic/Textures
-	cp -u resources/icons/use_relic.png                        	public/$(sideloaderpath)/Items/UseRelic/Textures/icon.png
-	cp -u resources/icons/use_relic_small.png                  	public/$(sideloaderpath)/Items/UseRelic/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/GildedRelic/Textures/
-	cp -u resources/icons/gilded_relic.png                      public/$(sideloaderpath)/Items/GildedRelic/Textures/icon.png
-	mkdir -p public/$(sideloaderpath)/Items/BasicRelic/Textures/
-	cp -u resources/icons/basic_relic.png                       public/$(sideloaderpath)/Items/BasicRelic/Textures/icon.png
-	mkdir -p public/$(sideloaderpath)/Items/WoodooCharm/Textures/
-	cp -u resources/icons/woodoo_charm.png                      public/$(sideloaderpath)/Items/WoodooCharm/Textures/icon.png
+	@make skill NAME="ManaFlow" FILENAME="mana_flow"
+	@make skill NAME="RelicFundamentals" FILENAME="relic_fundamentals"
+	@make skill NAME="ArcaneInfluence" FILENAME="arcane_influence"
+	@make skill NAME="RelicLore" FILENAME="relic_lore"
+	@make skill NAME="MythicLore" FILENAME="mythic_lore"
+	@make skill NAME="Unleash" FILENAME="unleash"
+	@make skill NAME="UseRelic" FILENAME="use_relic"
+	@make skill NAME="ManaFlow" FILENAME="mana_flow"
 	
-	cp -u $(unityassetbundles)/gilded_relic                                            public/$(sideloaderpath)/AssetBundles/gilded_relic
-	cp -u $(unityassetbundles)/basic_relic                                             public/$(sideloaderpath)/AssetBundles/basic_relic
-	cp -u $(unityassetbundles)/woodoo_charm                                            public/$(sideloaderpath)/AssetBundles/woodoo_charm
+	@make item NAME="GildedRelic" FILENAME="gilded_relic"
+	@make item NAME="BasicRelic" FILENAME="basic_relic"
+	@make item NAME="WoodooCharm" FILENAME="woodoo_charm"
+	
+	@make assetbundle FILENAME="gilded_relic"
+	@make assetbundle FILENAME="basic_relic"
+	@make assetbundle FILENAME="woodoo_charm"
 
 unity:
 	cp resources/artsource/woodoo_charm.fbx                                         $(unityassets)/woodoo_charm.fbx
@@ -65,35 +43,11 @@ unity:
 	cp $(exports)/gilded_relic/basic_relic_MetallicSmoothness.png    				$(unityassets)/gilded_relic_MetallicSmoothness.png
 	cp $(exports)/gilded_relic/basic_relic_Normal.png                				$(unityassets)/gilded_relic_Normal.png
 
-publish:
-	make clean
-	make assemble
-	rm -f $(modname).rar
-	rar a $(modname).rar -ep1 public/*
-	
-	(cd ../Descriptions && python3 RelicKeeper.py)
-	
-	cp -u resources/manifest.json public/BepInEx/
-	cp -u README.md public/BepInEx/
-	cp -u resources/icon.png public/BepInEx/
-	(cd public/BepInEx && zip -r $(modname)_thunderstore.zip * && mv $(modname)_thunderstore.zip ../../thunderstore)
-	cp -u ../tcli/thunderstore.toml thunderstore/
-	(cd thunderstore && tcli publish --file $(modname)_thunderstore.zip) || true ; \
-	mv thunderstore/$(modname)_thunderstore.zip .
-
-install:
-	if [ ! -f omit.txt ]; then make forceinstall; fi
-
 forceinstall:
 	make assemble
 	rm -r -f $(gamepath)/$(pluginpath)/$(modname)
 	cp -u -r public/* $(gamepath)
-clean:
-	rm -f -r public
-	rm -f $(modname).rar
-	rm -f $(modname).zip
-info:
-	echo Modname: $(modname)
+
 play:
 	(make install && cd .. && make play)
 backup:
@@ -102,7 +56,3 @@ backup:
 	cp -u resources/artsource/*.blend ../../OutwardModdingGraphicsBackup/resources/artsource
 	cp -u resources/artsource/*.spp ../../OutwardModdingGraphicsBackup/resources/artsource
 	cp -u resources/icons/*.pdn ../../OutwardModdingGraphicsBackup/resources/icons
-edit:
-	nvim ../Descriptions/$(modname).py
-readme:
-	(cd ../Descriptions/ && python3 $(modname).py)
