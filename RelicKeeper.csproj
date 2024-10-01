@@ -51,7 +51,6 @@
     <Compile Include="Items\GoldLichTalisman.cs" />
     <Compile Include="Items\ObsidianAmulet.cs" />
     <Compile Include="Items\WoodooCharm.cs" />
-    <Compile Include="RelicBehavior.cs" />
     <Compile Include="RelicEffects\RelicWard.cs" />
     <Compile Include="RelicEffects\RelicPush.cs" />
     <Compile Include="RelicEffects\TameBeast.cs" />

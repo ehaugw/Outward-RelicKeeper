@@ -1,41 +1,32 @@
 ﻿using HarmonyLib;
 using InstanceIDs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TinyHelper;
 
 namespace RelicKeeper
 {
-    using CharacterExtensions;
     using UnityEngine;
     using static MapMagic.ObjectPool;
+    using RelicCondition;
 
     public class RelicPassives
     {
         public const float RelicProtectionEfficiency = 0.2f;
 
-        public static bool HasArcaneInfluence(Character character)
-        {
-            return SkillRequirements.SafeHasSkillKnowledge(character, IDs.arcaneInfluenceID);
-        }
         public static bool CanCastTormentWithDrawnWeapon(Character character)
         {
-            return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && HasArcaneInfluence(character);
+            return RelicCondition.HasRelicEquippedOrOnBackpack(character, IDs.woodooCharmID) && RelicCondition.HasArcaneInfluence(character);
         }
 
         public static Equipment CanProtectDamageWithRelic(Character character)
         {
-            if (HasArcaneInfluence(character))
+            if (RelicCondition.HasArcaneInfluence(character))
             {
-                var basicRelic = RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.basicRelicID);
+                var basicRelic = RelicCondition.HasRelicEquippedOrOnBackpack(character, IDs.basicRelicID);
                 if (basicRelic)
                 {
                     return basicRelic;
                 }
-                return RelicBehavior.HasRelicEquippedOrOnBackpack(character, IDs.gildedRelicID);
+                return RelicCondition.HasRelicEquippedOrOnBackpack(character, IDs.gildedRelicID);
             }
             return null;
         }
