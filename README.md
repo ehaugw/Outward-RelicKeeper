@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at September 25, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at October 01, 2024. 
 
 
 
@@ -125,6 +125,9 @@ Effects:
 # Patch notes
 
 
+* Version 1.1.0
+
+  * breaking change to RelicConditions, which means you must update **RelicKeeper** and [Crusader's Equipment](https://outward.thunderstore.io/package/ehaugw/CrusadersEquipment/ "Crusader's Equipment") at the same time
 * Version 1.0.3
 
   * don't include unfinished items, to ensure the mod runs smoothly
