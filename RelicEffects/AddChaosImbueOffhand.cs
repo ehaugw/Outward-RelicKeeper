@@ -1,6 +1,7 @@
 ﻿using InstanceIDs;
 using SideLoader;
 using UnityEngine;
+using RelicCondition;
 
 namespace RelicKeeper
 {

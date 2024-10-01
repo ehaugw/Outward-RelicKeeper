@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TinyHelper;
 using UnityEngine;
+using RelicCondition;
+
 
 namespace RelicKeeper
 {
