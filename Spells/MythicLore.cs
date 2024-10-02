@@ -8,13 +8,14 @@ using UnityEngine;
 
 namespace RelicKeeper
 {
+    using RelicCondition;
     public class MythicLore
     {
         public static Skill Init()
         {
             var myitem = new SL_Skill()
             {
-                Name = "Mythic Lore",
+                Name = RelicCondition.RelicLoreLevel2Name,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
                 New_ItemID = IDs.mythicLoreID,
