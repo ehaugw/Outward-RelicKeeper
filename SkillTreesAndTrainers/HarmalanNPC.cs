@@ -11,10 +11,11 @@ namespace RelicKeeper
 
     public class HarmalanNPC : SynchronizedNPC
     {
+        public const string NAME = "Harmalan";
         public static void Init()
         {
             var syncedNPC = new HarmalanNPC(
-                identifierName: "Harmalan",
+                identifierName: NAME,
                 rpcListenerID: IDs.NPCID_Harmalan,
                 defaultEquipment: new int[] { IDs.whiteWideHatID, IDs.whiteArcaneRobeID, IDs.desertBootsID, IDs.basicRelicID, IDs.lightMenderBackpackID},
                 visualData: new SL_Character.VisualData()
@@ -26,10 +27,16 @@ namespace RelicKeeper
                 }
             );
 
+            //syncedNPC.AddToScene(new SynchronizedNPCScene(
+            //    scene: "Berg",
+            //    position: new Vector3(-649.0438f, -1575.157f, 741.9805f),
+            //    rotation: new Vector3(0, 26.5f, 0)
+            //));
+
             syncedNPC.AddToScene(new SynchronizedNPCScene(
-                scene: "Berg",
-                position: new Vector3(-649.0438f, -1575.157f, 741.9805f),
-                rotation: new Vector3(0, 26.5f, 0)
+                scene: "Chersonese_Dungeon1",
+                position: new Vector3(-43.9981f, 10.0289f, - 4.8826f),
+                rotation: new Vector3(0, 119.5807f, 0f)
             ));
         }
 
@@ -54,21 +61,31 @@ namespace RelicKeeper
             var openTrainer = TinyDialogueManager.MakeTrainDialogueAction(graph, trainerComp);
 
             //NPC statements
-            var rootStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "What do you want, peasant?");
-            var everyoneKnowsMeStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Hah! Like you don't know... Everyone knows me, I'm a living legend known as \"The Juggernaut\"!");
+            var rootStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Hmmmmm...?");
+            var iAmRelicKeeperStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I am " + NAME + ", a Relic Keeper");
+            var iCollectRelicsStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I collect relics and channel their powers. It's a very versatile craft.");
+            var noWorriesStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "No worries. Take care.");
+            var canTeachStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Absolutely!");
 
             //Player statements
-            var requestTrainingText = "I wish to become a legend like you!";
+            var requestTrainingText = "Can you teach me anything?";
             var whoAreYouText = "Who are you?";
+            var sorryForDisturbingText = "Sorry for bothering.";
+            var whatIsARelicKeeperText = "Relic Keeper, you say? What does that mean?";
 
             //Player choices
-            var introMultipleChoice = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { whoAreYouText, requestTrainingText, });
+            var introMultipleChoice = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { whoAreYouText, requestTrainingText, sorryForDisturbingText, });
+            var whatIsARelicKeeperChoice = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { whatIsARelicKeeperText, });
 
             graph.primeNode = rootStatement;
 
             ////inject compliment about killing wendigo if first time talking
             TinyDialogueManager.ChainNodes(graph, new Node[] { rootStatement, introMultipleChoice });
-            TinyDialogueManager.ConnectMultipleChoices(graph, introMultipleChoice, new Node[] { everyoneKnowsMeStatement, openTrainer });
+            TinyDialogueManager.ConnectMultipleChoices(graph, introMultipleChoice, new Node[] { iAmRelicKeeperStatement, canTeachStatement, noWorriesStatement, });
+            TinyDialogueManager.ChainNodes(graph, new Node[] { canTeachStatement, openTrainer });
+            TinyDialogueManager.ChainNodes(graph, new Node[] { iAmRelicKeeperStatement, whatIsARelicKeeperChoice });
+            TinyDialogueManager.ConnectMultipleChoices(graph, whatIsARelicKeeperChoice, new Node[] { iCollectRelicsStatement, });
+            TinyDialogueManager.ChainNodes(graph, new Node[] { iCollectRelicsStatement, introMultipleChoice });
 
             var obj = instanceGameObject.transform.parent.gameObject;
             obj.SetActive(true);
