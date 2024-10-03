@@ -61,7 +61,8 @@ namespace RelicKeeper
             PlagueBlast.Apply(skill, IDs.sporeShieldID);
             Cleanse.Apply(skill, IDs.lanternOfSouldID);
             CurseOfVulnerabilityBlast.Apply(skill, IDs.woodooCharmID);
-            
+            TroglodyteStaffEffectBoon.Apply(skill, IDs.troglodyteStaffID);
+
             //IN PROGRESS
             //DivineIntervention.Apply(skill, IDs.goldLichTalismanID);
             //RelicProtection.Apply(skill, IDs.alphaTuanosaurTrinketID);
