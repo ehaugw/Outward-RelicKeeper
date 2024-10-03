@@ -59,6 +59,7 @@ namespace RelicKeeper
             AddChaosImbueOffhand.Apply(skill, IDs.redLadysDaggerID);
             RevealSoul.Apply(skill, IDs.lanternOfSouldID);
             MeleeJinx.Apply(skill, IDs.woodooCharmID);
+            TroglodyteStaffEffectHex.Apply(skill, IDs.troglodyteStaffID);
 
             //IN PROGRESS
             //BasicHeal.Apply(skill, IDs.goldLichTalismanID);
