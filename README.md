@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at October 01, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at October 03, 2024. 
 
 
 
@@ -125,6 +125,10 @@ Effects:
 # Patch notes
 
 
+* Version 1.1.1
+
+  * update trainer location and dialogue
+  * RelikCondition update: display the required relic lore level to Use Relic and Unleash
 * Version 1.1.0
 
   * breaking change to RelicConditions, which means you must update **RelicKeeper** and [Crusader's Equipment](https://outward.thunderstore.io/package/ehaugw/CrusadersEquipment/ "Crusader's Equipment") at the same time
@@ -195,6 +199,9 @@ Effects:
 * [Rune of Protection](https://thunderstore.io/c/outward/p/ehaugw/RuneOfProtection "Rune of Protection")
 
   * Enable manaless characters to gain Runic Protection through a limited consumable
+* [Relic Keeper](https://outward.thunderstore.io/package/ehaugw/RelicKeeper/ "Relic Keeper")
+
+  * Gives the player an opportunity to collect relics of all rarities, and channel their unique powers.
 
 
 
