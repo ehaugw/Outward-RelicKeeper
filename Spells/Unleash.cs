@@ -59,7 +59,7 @@ namespace RelicKeeper
             FireSigil.Apply(skill, IDs.redLadysDaggerID);
             PlagueBlast.Apply(skill, IDs.mushroomShieldID);
             PlagueBlast.Apply(skill, IDs.sporeShieldID);
-            Cleanse.Apply(skill, IDs.lanternOfSouldID);
+            RevealSoul.Apply(skill, IDs.lanternOfSouldID);
             CurseOfVulnerabilityBlast.Apply(skill, IDs.woodooCharmID);
             TroglodyteStaffEffectBoon.Apply(skill, IDs.troglodyteStaffID);
 
