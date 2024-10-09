@@ -10,6 +10,7 @@
     using SynchronizedWorldObjects;
     using InstanceIDs;
     using RelicCondition;
+    using CrusadersEquipment;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
@@ -79,6 +80,9 @@
             MythicLore.Init();
             RelicFundamentals.Init();
             ArcaneInfluence.Init();
+
+            //SPELL TWEAKS
+            RadiantSpark.Init();
 
             RelicKeeperSkillTree.SetupSkillTree(ref RelicKeeperSkillTreeInstance);
         }

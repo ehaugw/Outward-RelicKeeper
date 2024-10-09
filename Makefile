@@ -4,7 +4,7 @@ exports = resources/artsource/exports
 unityassets = resources/unity/RelicKeeper/Assets
 unityassetbundles = resources/unity/RelicKeeper/Assets/AssetBundles
 
-dependencies = BaseDamageModifiers EffectSourceConditions RelicCondition SynchronizedWorldObjects TinyHelper
+dependencies = BaseDamageModifiers EffectSourceConditions RelicCondition SynchronizedWorldObjects TinyHelper ImpendingDoom
 
 assemble:
 	# common for all mods

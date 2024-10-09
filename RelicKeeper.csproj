@@ -76,6 +76,7 @@
     <Compile Include="Spells\ManaFlow.cs" />
     <Compile Include="Spells\Unleash.cs" />
     <Compile Include="Spells\UseRelic.cs" />
+    <Compile Include="SpellTweaks\RadiantSpark.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -127,6 +128,10 @@
     <ProjectReference Include="..\EffectSourceConditions\EffectSourceConditions.csproj">
       <Project>{451d5546-0a6e-4183-92d2-4720ed3c2795}</Project>
       <Name>EffectSourceConditions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImpendingDoom\ImpendingDoom.csproj">
+      <Project>{9f9a003c-f0e9-4f69-8470-1aec6928e139}</Project>
+      <Name>ImpendingDoom</Name>
     </ProjectReference>
     <ProjectReference Include="..\InstanceIDs\InstanceIDs.csproj">
       <Project>{407d22a2-71a9-4906-a3d0-0a2211718463}</Project>
