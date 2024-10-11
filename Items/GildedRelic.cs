@@ -31,7 +31,7 @@ namespace RelicKeeper
                     MaxDurability = 100,
                 },
                 BehaviorOnNoDurability = Item.BehaviorOnNoDurabilityType.DoNothing,
-                RepairedInRest = false,
+                RepairedInRest = true,
 
                 Tags = TinyTagManager.GetOrMakeTags(new string[]
                 {
