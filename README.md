@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at October 03, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at October 13, 2024. 
 
 
 
@@ -16,9 +16,9 @@ What's the purpose of "Relic Keeper"?
 
 # Features
 
-The "Relic Keeper" is the closes you get to a wizard in Dungeons and Dragons. The class provides only two skills, namely **Use Relic** and **Unleash**, but the effect of those skills varies depending on the equipped relic. There are currently nine unique active relic effects, and twopassive effects. Other equipment mods, like [Crusader's Equipment](https://outward.thunderstore.io/package/ehaugw/CrusadersEquipment/ "Crusader's Equipment") provides more relics with their own unique effects
+The "Relic Keeper" is the closes you get to a wizard in Dungeons and Dragons. The class provides only two skills, namely **Use Relic** and **Unleash**, but the effect of those skills varies depending on the equipped relic. There are currently nine unique active relic effects, and twopassive effects. Other equipment mods, like [Crusader's Equipment](https://outward.thunderstore.io/package/ehaugw/CrusadersEquipment/ "Crusader's Equipment") provides more relics with their own unique effects.
 
-The trainer is found inside the Blue Chamber building.
+The trainer is found inside Vendavel Fortress.
 
 
 Skills:
@@ -73,6 +73,13 @@ Left hand or Lantern
 * Durability: 200
 * Crafted from a **Basic Relic** and a **Gold Bar**
 
+**Troglodyte Staff**
+Staff
+
+* Use Relic: Shoot homing projectiles that apply **Confusion** and **Slow Down** to enemies that are hit
+* Unleash: Shoot homing projectiles that heal for 30 health, apply **Runic Protection**, **Stability Up 2**, **Rage Amplified** and infuse weapons with **Infuse Mana** to allies that are hit.
+* Durability: 175
+
 **Red Lady's Dagger**
 Dagger
 
@@ -103,8 +110,13 @@ Shield
 **Lantern of Souls**
 Left hand or Lantern
 
-* Use Relic: Release a soul from the lantern
-* Unleash: Replicate **Cleanse**
+* Use Relic Shoot five soul projectiles dealing 10 ethereal damage each
+* Unleash: Relic: Release a soul from the lantern
+
+**Lightmender's Lexicon**
+Lexicon
+
+* Arcane Influence: **Spark** applies and spreads [Impending Doom](https://outward.thunderstore.io/package/ehaugw/Crusader/ "Impending Doom")
 
 
 Effects:
@@ -125,6 +137,13 @@ Effects:
 # Patch notes
 
 
+* Version 1.1.2
+
+  * gilded relic can be repaired
+  * add impending doom to spark as a arcane influence for lightmender lexicon
+  * lantern of souls changed from  release soul and cleanse to magic missile and release soul
+  * change reveal soul relic effect 14->5 mana
+  * Implement Troglodyte Staff as a relic
 * Version 1.1.1
 
   * update trainer location and dialogue
